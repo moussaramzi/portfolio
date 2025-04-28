@@ -1,20 +1,25 @@
-const AboutMe = () => {
+// AboutMe.jsx
+export default function AboutMe() {
     return (
-        <div className="about-me h-screen">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate software developer with a love for creating
-            innovative solutions. My journey in tech has been filled with
-            learning and growth, and I am excited to continue exploring new
-            technologies and methodologies.
-        </p>
-        <p>
-            In my spare time, I enjoy contributing to open-source projects,
-            participating in hackathons, and sharing knowledge with the
-            developer community.
-        </p>
+      <section id="about" className="py-16 text-white">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1 flex justify-center">
+            <img
+              src="/your-profile.jpg" 
+              alt="Profile"
+              className="w-64 h-64 object-cover rounded-full border-4 border-blue-500 shadow-lg"
+            />
+          </div>
+  
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-4xl font-bold mb-6">About Me</h2>
+            <p className="text-lg text-gray-400 max-w-xl mx-auto md:mx-0">
+              I'm a passionate developer who loves building web applications with modern technologies. 
+              I enjoy solving problems, learning new skills, and creating projects that really make a difference.
+            </p>
+          </div>
         </div>
+      </section>
     );
-    }
-
-export default AboutMe;
+  }
+  
