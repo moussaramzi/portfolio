@@ -7,7 +7,7 @@
 # 🚀 My Developer Portfolio
 
 Welcome to my personal portfolio website!  
-This project showcases my skills, projects, and technologies I use — built with **React**, **Vue**, and styled using **TailwindCSS**.
+This project showcases my skills, projects, and technologies I use — built with **React** and styled using **TailwindCSS**.
 
 ---
 
