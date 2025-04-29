@@ -5,13 +5,13 @@ import './index.css'
 import './i18n.tsx';
 import AboutMe from './components/aboutme.tsx'
 import {Tools} from './components/tech.tsx'
-import LanguageSwitcher from './components/languageSwitcher.tsx';
+import SettingsPopup from './components/settingPopup.tsx';
 
 createRoot(document.getElementById('root')!).render(
 
  <StrictMode>
     <Navbar />
-    <LanguageSwitcher />
+    <SettingsPopup />
     <AboutMe />
     <Tools />
   </StrictMode>,
