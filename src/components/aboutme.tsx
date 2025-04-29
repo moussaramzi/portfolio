@@ -1,5 +1,8 @@
-// AboutMe.jsx
+import { useTranslation } from 'react-i18next';
+
 export default function AboutMe() {
+    const { t } = useTranslation('about');
+    
     return (
       <section id="about" className="py-16 text-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
@@ -12,14 +15,12 @@ export default function AboutMe() {
           </div>
   
           <div className="flex-1 text-center md:text-left">
-            <h2 className="text-4xl font-bold mb-6">About Me</h2>
+            <h2 className="text-4xl font-bold mb-6">{t('about.title')}</h2>
             <p className="text-lg text-gray-400 max-w-xl mx-auto md:mx-0">
-              I'm a passionate developer who loves building web applications with modern technologies. 
-              I enjoy solving problems, learning new skills, and creating projects that really make a difference.
+              {t('about.description')}
             </p>
           </div>
         </div>
       </section>
     );
-  }
-  
+}
