@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { t } = useTranslation('navbar');
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -75,9 +78,9 @@ const Navbar = () => {
         </div>
         
         <ul className="hidden md:flex space-x-6">
-          <li><a href="#about" className="text-white transition-colors font-medium">About</a></li>
-          <li><a href="#projects" className="text-white transition-colors font-medium">Projects</a></li>
-          <li><a href="#contact" className="text-white transition-colors font-medium">Contact</a></li>
+          <li><a href="#about" className="text-white transition-colors font-medium">{t('navbar.about')}</a></li>
+          <li><a href="#projects" className="text-white transition-colors font-medium">{t('navbar.projects')}</a></li>
+          <li><a href="#contact" className="text-white transition-colors font-medium">{t('navbar.contact')}</a></li>
         </ul>
       </div>
       
@@ -88,9 +91,9 @@ const Navbar = () => {
       >
         <div className="flex flex-col pt-20 px-6">
           <ul className="space-y-6">
-            <li><a href="#about" onClick={toggleMenu} className="text-white font-medium text-lg block py-2">About</a></li>
-            <li><a href="#projects" onClick={toggleMenu} className="text-white font-medium text-lg block py-2">Projects</a></li>
-            <li><a href="#contact" onClick={toggleMenu} className="text-white font-medium text-lg block py-2">Contact</a></li>
+            <li><a href="#about" onClick={toggleMenu} className="text-white font-medium text-lg block py-2">{t('navbar.about')}</a></li>
+            <li><a href="#projects" onClick={toggleMenu} className="text-white font-medium text-lg block py-2">{t('navbar.projects')}</a></li>
+            <li><a href="#contact" onClick={toggleMenu} className="text-white font-medium text-lg block py-2">{t('navbar.contact')}</a></li>
           </ul>
         </div>
       </div>
