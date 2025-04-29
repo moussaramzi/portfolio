@@ -94,7 +94,7 @@ export function Tools() {
           <h2 className="text-4xl font-bold mb-10">Tech title</h2>
   
           <p className="text-lg text-gray-400 mb-8">Frontend Technologies</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             <TechIcon src="/tech/skill-icons--react-dark.svg" alt="React" label="React js/native" skill={90} />
             <TechIcon src="/tech/skill-icons--angular-dark.svg" alt="Angular" label="Angular" skill={85}  />
             <TechIcon src="/tech/skill-icons--flutter-dark.svg" alt="Flutter" label="Flutter" skill={50} />

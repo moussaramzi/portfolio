@@ -6,6 +6,7 @@ import './i18n.tsx';
 import AboutMe from './components/aboutme.tsx'
 import {Tools} from './components/tech.tsx'
 import SettingsPopup from './components/settingPopup.tsx';
+import ContactForm from './components/contactForm.tsx';
 
 createRoot(document.getElementById('root')!).render(
 
@@ -14,5 +15,6 @@ createRoot(document.getElementById('root')!).render(
     <SettingsPopup />
     <AboutMe />
     <Tools />
+    <ContactForm />
   </StrictMode>,
 )
