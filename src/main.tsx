@@ -8,6 +8,7 @@ import {Tools} from './components/tech.tsx'
 import SettingsPopup from './components/settingPopup.tsx';
 import ContactForm from './components/contactForm.tsx';
 import { Projects } from './components/projects.tsx';
+import Footer from './components/footer.tsx';
 
 createRoot(document.getElementById('root')!).render(
 
@@ -18,5 +19,6 @@ createRoot(document.getElementById('root')!).render(
     <Tools />
     <Projects />
     <ContactForm />
+    <Footer />
   </StrictMode>,
 )
