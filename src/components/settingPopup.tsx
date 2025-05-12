@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react"; 
 import { Settings, Sun, Moon } from "lucide-react";
 import LanguageSwitcher from "./languageSwitcher";
 
@@ -6,6 +6,7 @@ const SettingsPopup = () => {
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false); 
   const [isMobile, setIsMobile] = useState(false);
+  const popupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -32,6 +33,24 @@ const SettingsPopup = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []); 
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]); 
+
   const togglePopup = () => setOpen(!open);
 
   const toggleDarkMode = () => {
@@ -57,7 +76,7 @@ const SettingsPopup = () => {
     : "none";
 
   return (
-    <div className={`${positionClass} z-50`}>
+    <div className={`${positionClass} z-50`} ref={popupRef}> 
       <button
         onClick={togglePopup}
         className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-md hover:bg-blue-600 transition-all duration-300 z-10 relative"

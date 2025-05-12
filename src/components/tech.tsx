@@ -99,7 +99,10 @@ export function TechIcon({ src, alt, label, skill, level, srcDark }: TechIconPro
           alt={alt}
           className={`w-16 h-16 object-contain rounded-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
           onLoad={() => setLoaded(true)}
-          onError={() => {  setEffectiveSrc(src); }}
+            onError={() => {
+            console.error(`Failed to load image: ${effectiveSrc}`);
+            setEffectiveSrc("/tech/skill-icons--github-dark.svg"); 
+          }}
         />
       </div>
       <span className="mt-2 ">{label}</span>
