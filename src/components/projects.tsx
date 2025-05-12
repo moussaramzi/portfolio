@@ -1,8 +1,6 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 interface Project {
   id: string;
@@ -37,58 +35,67 @@ const projects: Project[] = [
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.9 });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({ opacity: 1, y: 0 });
-    }
-  }, [controls, inView]);
-
   return (
     <motion.div
-      ref={ref}
-      className="bg-[#1e293b] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-[1.02] flex flex-col group"
       initial={{ opacity: 0, y: 50 }}
-      animate={controls}
-      transition={{ duration: 0.6, delay: index * 0.15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      viewport={{ once: true }}
+      className={`sticky top-32 w-full`}
+      style={{ 
+        zIndex: index + 1,  
+        marginTop: index === 0 ? '0' : '80px'  
+      }}
     >
-      <div className="overflow-hidden">
+      <a 
+        href={project.link}
+        className="block text-white rounded-2xl shadow-xl w-full max-w-5xl mx-auto bg-red-700 relative overflow-hidden group cursor-pointer"
+      >
+        <div className="p-6">
+          <h3 className="text-2xl font-semibold">{project.title}</h3>
+        </div>
         <img
           src={project.image}
           alt={project.title}
-          className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="h-66 w-full object-cover"
         />
-      </div>
-      <div className="p-6 flex-1 flex flex-col justify-between">
-        <div>
-          <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-          <p className="text-gray-400 text-sm mb-4">{project.description}</p>
-        </div>
-        <a href={project.link}>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="inline-block text-center bg-blue-600 text-white py-2 px-4 rounded-xl transition-colors duration-300 hover:bg-blue-500 mt-auto"
-          >
+        
+        {/* Description for mobile (bottom) */}
+        <div className="md:hidden p-6 bg-gray-800/90">
+          <p className="text-gray-200 text-sm mb-2">{project.description}</p>
+          <span className="inline-block bg-blue-600 text-white py-2 px-4 rounded-xl">
             View Project
-          </motion.div>
-        </a>
-      </div>
+          </span>
+        </div>
+        
+        {/* Description for desktop (sidebar) */}
+        <div className="hidden md:block absolute top-0 right-0 h-full w-0 group-hover:w-1/3 bg-gray-500/80 bg-opacity-70 transition-all duration-300 ease-in-out flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300  w-full h-full flex flex-col items-center justify-center p-0 group-hover:p-6">
+            <p className="text-gray-200 text-sm mb-4">{project.description}</p>
+            <span className="inline-block bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-500 transition-colors ">
+              View Project
+            </span>
+          </div>
+        </div>
+      </a>
     </motion.div>
   );
 }
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20  text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
-        </div>
+    <section
+      id="projects"
+      className="relative pt-32 scroll-mt-20"
+    >
+      <h2 className="text-4xl font-bold text-center mb-20 top-16 sticky  py-2 ">
+        My Projects
+      </h2>
+
+      <div className="relative flex flex-col items-center">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.id} project={project} index={index} />
+        ))}
       </div>
     </section>
   );
