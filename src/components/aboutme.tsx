@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 export default function AboutMe() {
     const { t } = useTranslation('about');
     
-    return (
-      <section id="about" className="py-16 text-white">
+      return (
+      <section id="about" className="py-16">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 flex justify-center">
             <img
@@ -16,7 +16,7 @@ export default function AboutMe() {
   
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-4xl font-bold mb-6">{t('about.title')}</h2>
-            <p className="text-lg text-gray-400 max-w-xl mx-auto md:mx-0">
+            <p className="text-lg  dark:text-gray-300 max-w-xl mx-auto md:mx-0">
               {t('about.description')}
             </p>
           </div>

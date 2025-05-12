@@ -4,21 +4,46 @@ import LanguageSwitcher from "./languageSwitcher";
 
 const SettingsPopup = () => {
   const [open, setOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false); 
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
+
+    const storedPreference = localStorage.getItem('darkMode');
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let initialDarkMode = false;
+
+    if (storedPreference !== null) {
+      initialDarkMode = storedPreference === 'true';
+    } else {
+      initialDarkMode = systemPrefersDark;
+    }
+
+    setDarkMode(initialDarkMode);
+    if (initialDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
     return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  }, []); 
 
   const togglePopup = () => setOpen(!open);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark");
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    if (newDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem('darkMode', 'false');
+    }
   };
 
   const positionClass = isMobile
@@ -33,7 +58,6 @@ const SettingsPopup = () => {
 
   return (
     <div className={`${positionClass} z-50`}>
-      {/* Settings icon (always visible) */}
       <button
         onClick={togglePopup}
         className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-md hover:bg-blue-600 transition-all duration-300 z-10 relative"
@@ -50,7 +74,7 @@ const SettingsPopup = () => {
           ${open ? "scale-100 opacity-100 pointer-events-auto" : "scale-75 opacity-0 pointer-events-none"}
         `}
         style={{
-          background: "white",
+          background: "white", 
           boxShadow: "0 10px 40px rgba(0, 0, 0, 0.15)",
           borderRadius: "0.75rem",
           clipPath,
