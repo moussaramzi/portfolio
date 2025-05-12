@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from "react"; 
+import { useState, useEffect, useRef } from "react";
 import { Settings, Sun, Moon } from "lucide-react";
 import LanguageSwitcher from "./languageSwitcher";
 
 const SettingsPopup = () => {
   const [open, setOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false); 
+  const [darkMode, setDarkMode] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -13,29 +13,34 @@ const SettingsPopup = () => {
     checkMobile();
     window.addEventListener("resize", checkMobile);
 
-    const storedPreference = localStorage.getItem('darkMode');
-    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedPreference = localStorage.getItem("darkMode");
+    const systemPrefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
     let initialDarkMode = false;
 
     if (storedPreference !== null) {
-      initialDarkMode = storedPreference === 'true';
+      initialDarkMode = storedPreference === "true";
     } else {
       initialDarkMode = systemPrefersDark;
     }
 
     setDarkMode(initialDarkMode);
     if (initialDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
 
     return () => window.removeEventListener("resize", checkMobile);
-  }, []); 
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+      if (
+        popupRef.current &&
+        !popupRef.current.contains(event.target as Node)
+      ) {
         setOpen(false);
       }
     };
@@ -49,7 +54,7 @@ const SettingsPopup = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [open]); 
+  }, [open]);
 
   const togglePopup = () => setOpen(!open);
 
@@ -58,10 +63,10 @@ const SettingsPopup = () => {
     setDarkMode(newDarkMode);
     if (newDarkMode) {
       document.documentElement.classList.add("dark");
-      localStorage.setItem('darkMode', 'true');
+      localStorage.setItem("darkMode", "true");
     } else {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem('darkMode', 'false');
+      localStorage.setItem("darkMode", "false");
     }
   };
 
@@ -76,7 +81,7 @@ const SettingsPopup = () => {
     : "none";
 
   return (
-    <div className={`${positionClass} z-50`} ref={popupRef}> 
+    <div className={`${positionClass} z-50`} ref={popupRef}>
       <button
         onClick={togglePopup}
         className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-md hover:bg-blue-600 transition-all duration-300 z-10 relative"
@@ -89,13 +94,18 @@ const SettingsPopup = () => {
       <div
         className={`
           absolute ${isMobile ? "bottom-0 left-0" : "bottom-0 right-0 "}
-          transition-transform transition-opacity duration-300 ease-out
-          ${open ? "scale-100 opacity-100 pointer-events-auto" : "scale-75 opacity-0 pointer-events-none"}
+          transition-transform transition-opacity duration-300 ease-out 
+          ${
+            open
+              ? "scale-100 opacity-100 pointer-events-auto "
+              : "scale-75 opacity-0 pointer-events-none"
+          }
         `}
         style={{
-          background: "white", 
           boxShadow: "0 10px 40px rgba(0, 0, 0, 0.15)",
           borderRadius: "0.75rem",
+          backgroundColor: darkMode ? "white" : "#242424",
+          color: darkMode ? "#242424" : "white",
           clipPath,
           transformOrigin,
           padding: "1rem",
@@ -104,20 +114,20 @@ const SettingsPopup = () => {
       >
         {/* Content */}
         <div className="flex flex-col space-y-4 pb-14">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-800 dark:text-white">Language</span>
+          <div className="flex items-center justify-between  ">
+            <span className="text-sm ">Language</span>
             <LanguageSwitcher />
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-800 dark:text-white">Dark Mode</span>
+            <span className="text-sm  ">Dark Mode</span>
             <button
               onClick={toggleDarkMode}
-              className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full transition-all"
+              className="w-10 h-10 flex items-center justify-center dark:bg-gray-200 bg-gray-700 rounded-full transition-all"
             >
               {darkMode ? (
                 <Sun size={20} className="text-yellow-400" />
               ) : (
-                <Moon size={20} className="text-gray-600" />
+                <Moon size={20} />
               )}
             </button>
           </div>
