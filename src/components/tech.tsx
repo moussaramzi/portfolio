@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useState, useEffect, useRef } from "react";
 
 function getSkillLevel(skill: number): string {
@@ -126,12 +127,13 @@ export function TechIcon({ src, alt, label, skill, level, srcDark }: TechIconPro
 }
 
 export function Tools() {
+    const { t } = useTranslation("tech");
     return (
       <section id="tools" className="py-16 items-center">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-10">Tech Stack</h2>
+          <h2 className="text-4xl font-bold mb-10">{t("tech.title")}</h2>
   
-          <p className="text-lg dark:text-gray-500 mb-8">Frontend Technologies</p>
+          <p className="text-lg dark:text-gray-500 mb-8">{t("tech.frontend")}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
             <TechIcon src="/tech/skill-icons--react-dark.svg" alt="React" label="React js/native" skill={90} />
             <TechIcon src="/tech/skill-icons--angular-dark.svg" alt="Angular" label="Angular" skill={85}  />
@@ -142,7 +144,7 @@ export function Tools() {
             <TechIcon src="/tech/skill-icons--typescript.svg" alt="Typescript" label="Typescript" skill={85}  />
           </div>
   
-          <p className="text-lg dark:text-gray-500 mb-8">Backend Technologies</p>
+          <p className="text-lg dark:text-gray-500 mb-8">{t("tech.backend")}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
             <TechIcon src="/tech/skill-icons--laravel-dark.svg" alt="Laravel" label="Laravel PHP" skill={50}  />
             <TechIcon src="/tech/skill-icons--mysql-dark.svg" alt="MySQL" label="MySQL" skill={80} />
@@ -151,7 +153,7 @@ export function Tools() {
             <TechIcon src="/tech/skill-icons--nodejs-dark.svg" alt="Nodejs" label="Nodejs" skill={90}  />
           </div>
 
-          <p className="text-lg dark:text-gray-500 mb-8">Other Technologies</p>
+          <p className="text-lg dark:text-gray-500 mb-8">{t("tech.other")}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <TechIcon src="/tech/skill-icons--github-dark.svg" srcDark="/tech/skill-icons--github.svg" alt="Git" label="Git" skill={75} />
           <TechIcon src="/tech/skill-icons--docker.svg" alt="Docker" label="Docker" skill={65} />

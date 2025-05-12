@@ -1,0 +1,8 @@
+{
+  "tech": {
+    "title": "Tech Stack Title",
+    "frontend": "Frontend Technologies",
+    "backend": "Backend Technologies",
+    "other": "Other Technologies"
+  }
+}

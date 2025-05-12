@@ -27,14 +27,14 @@ const Navbar = () => {
       setMenuVisible(true);
       document.body.style.overflow = "hidden";
       requestAnimationFrame(() => {
-        setMenuOpen(true); // Trigger transition on next frame
+        setMenuOpen(true); 
       });
     } else {
-      setMenuOpen(false); // Trigger slide-out
+      setMenuOpen(false); 
       document.body.style.overflow = "auto";
       setTimeout(() => {
-        setMenuVisible(false); // Unmount after transition
-      }, 400); // Match transition duration
+        setMenuVisible(false); 
+      }, 400); 
     }
   };
 
