@@ -33,7 +33,7 @@ This project showcases my skills, projects, and technologies I use — built wit
 
 ## 🖥️ Live Demo
 
-🚀 You can view the live portfolio at: [soon]()
+🚀 You can view the live portfolio at: [soon](https://chromedino.com/)
 
 ---
 
