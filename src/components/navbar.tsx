@@ -27,14 +27,14 @@ const Navbar = () => {
       setMenuVisible(true);
       document.body.style.overflow = "hidden";
       requestAnimationFrame(() => {
-        setMenuOpen(true); 
+        setMenuOpen(true);
       });
     } else {
-      setMenuOpen(false); 
+      setMenuOpen(false);
       document.body.style.overflow = "auto";
       setTimeout(() => {
-        setMenuVisible(false); 
-      }, 400); 
+        setMenuVisible(false);
+      }, 400);
     }
   };
 
@@ -89,17 +89,34 @@ const Navbar = () => {
 
         <ul className="hidden md:flex space-x-6">
           <li>
-            <a href="#about" className="text-white transition-colors font-medium">
+            <a
+              href="#about"
+              className="text-white transition-colors font-medium"
+            >
               {t("navbar.about")}
             </a>
           </li>
           <li>
-            <a href="#projects" className="text-white transition-colors font-medium">
+            <a
+              href="#projects"
+              className="text-white transition-colors font-medium"
+            >
               {t("navbar.projects")}
             </a>
           </li>
           <li>
-            <a href="#contact" className="text-white transition-colors font-medium">
+            <a
+              href="#projects"
+              className="text-white transition-colors font-medium"
+            >
+              {t("navbar.internship")}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="text-white transition-colors font-medium"
+            >
               {t("navbar.contact")}
             </a>
           </li>

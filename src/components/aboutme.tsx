@@ -8,7 +8,7 @@ export default function AboutMe() {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 flex justify-center">
             <img
-              src="/your-profile.jpg" 
+              src="/profile.webp" 
               alt="Profile"
               className="w-64 h-64 object-cover rounded-full border-4 border-blue-500 shadow-lg"
             />
