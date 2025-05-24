@@ -1,0 +1,10 @@
+
+{
+  "404": {
+    "title": "Page Not Found",
+    "message1": "Oops! The page you’re looking for doesn’t exist.",
+    "message2": "Maybe you took a wrong turn, or the page moved.",
+    "message3": "Let’s get you back on track!",
+    "button": "Go Home"
+  }
+}
