@@ -1,0 +1,9 @@
+{
+  "404": {
+    "title": "Pagina niet gevonden",
+    "message1": "Oeps! De pagina die je zoekt bestaat niet.",
+    "message2": "Misschien ben je verkeerd gegaan of is de pagina verplaatst.",
+    "message3": "Laten we je weer op weg helpen!",
+    "button": "Ga naar home"
+  }
+}
