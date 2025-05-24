@@ -1,6 +1,12 @@
 {
   "about": {
     "title": "Over mij",
-    "description": "Ik ben een gepassioneerde ontwikkelaar die graag webapplicaties bouwt met moderne technologieën. Ik geniet van het oplossen van problemen, het leren van nieuwe vaardigheden en het creëren van projecten die echt een verschil maken."
+    "description": "Ik ben een gepassioneerde ontwikkelaar die graag webapplicaties bouwt met moderne technologieën. Ik geniet van het oplossen van problemen, het leren van nieuwe vaardigheden en het creëren van projecten die echt een verschil maken.",
+    "course": {
+      "title": "Opleidingen",
+      "thomasmore": "Bachelor Toegepaste Informatica",
+      "college": "Informaticabeheer"
+    },
+    "download": "Download mijn CV"
   }
 }
