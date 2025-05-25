@@ -1,139 +1,117 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { ToastContainer, toast } from "react-toastify";
-import emailjs from "emailjs-com";
-import "react-toastify/dist/ReactToastify.min.css";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-type FormData = {
-  name: string;
-  email: string;
-  message: string;
-};
+export default function ContactForm() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const { t } = useTranslation("contact");
 
-const ContactForm = () => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>();
-  const [disabled, setDisabled] = useState(false);
-
-  const toastifySuccess = () => {
-    toast("Form sent!", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      className: "submit-feedback success",
-      toastId: "notifyToast",
-    });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async (data: FormData) => {
-    const { name, email, message } = data;
-    try {
-      setDisabled(true);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
-      const templateParams = {
-        name,
-        email,
-        message,
-      };
-
-      await emailjs.send(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_USER_ID
-      );
-
-      reset();
-      toastifySuccess();
-      setDisabled(false);
-    } catch (e) {
-      console.log(e);
-      setDisabled(false);
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => {
+        setSubmitted(false);
+        setForm({ name: "", email: "", message: "" });
+      }, 4000);
+      return () => clearTimeout(timer);
     }
-  };
+  }, [submitted]);
 
   return (
-    <div className="flex justify-center items-center my-20">
-      <div className="w-full max-w-lg  p-8 rounded shadow">
-        <h2 className="text-3xl font-bold mb-8 text-center">Contact Form</h2>
-        <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
-          {/* Name & Email */}
-          <div className="flex flex-col gap-6 mb-8">
-            <div>
-              <input
-                type="text"
-                {...register("name", {
-                  required: "Please enter your name",
-                  maxLength: {
-                    value: 30,
-                    message: "Please use 30 characters or less",
-                  },
-                })}
-                className="w-full px-6 py-5 border-2 border-blue-500 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
-                placeholder="Name"
-              />
-              {errors.name && (
-                <span className="text-red-500 text-lg">
-                  {errors.name.message}
-                </span>
-              )}
-            </div>
-            <div>
-              <input
-                type="email"
-                {...register("email", {
-                  required: "Please enter your email",
-                  pattern: {
-                    value:
-                      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                    message: "Please enter a valid email address",
-                  },
-                })}
-                className="w-full px-6 py-5 border-2 border-blue-500 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
-                placeholder="Email address"
-              />
-              {errors.email && (
-                <span className="text-red-500 text-lg">
-                  {errors.email.message}
-                </span>
-              )}
-            </div>
+    <section
+      id="contact"
+      className="py-16 my-20 transition-colors duration-500"
+    >
+      <div className="container mx-auto px-4 max-w-2xl border-2 border-gray-200 dark:border-gray-700 rounded-xl dark:shadow shadow-2xl   p-8">
+        <h2 className="text-4xl font-bold mb-6 text-center ">
+          {t("contact.title")}
+        </h2>
+        <p className="text-center  mb-10">{t("contact.subtitle")}</p>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="name" className="block mb-2 text-sm font-medium">
+              {t("contact.name")}
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              value={form.name}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+            />
           </div>
-          {/* Message */}
-          <div className="mb-8">
+
+          <div>
+            <label htmlFor="email" className="block mb-2 text-sm font-medium ">
+              {t("contact.email")}
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              value={form.email}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block mb-2 text-sm font-medium "
+            >
+              {t("contact.message")}
+            </label>
             <textarea
+              id="message"
+              name="message"
               rows={5}
-              {...register("message", {
-                required: "Please enter your message",
-              })}
-              className="w-full px-6 py-5 border-2 border-blue-500 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
-              placeholder="Your message"
-            ></textarea>
-            {errors.message && (
-              <span className="text-red-500 text-lg">
-                {errors.message.message}
-              </span>
-            )}
+              required
+              value={form.message}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+            />
           </div>
+
           <button
-            className="w-full bg-blue-600 text-white py-4 rounded text-xl font-semibold hover:bg-blue-700 transition disabled:opacity-50"
-            disabled={disabled}
             type="submit"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-2xl transition-colors duration-300 shadow-md"
           >
-            Submit
+            {t("contact.send")}
           </button>
         </form>
-        <ToastContainer />
-      </div>
-    </div>
-  );
-};
 
-export default ContactForm;
+        {/* Toast Notification */}
+        {submitted && (
+          <div className="fixed top-20 right-4 z-50 animate-fade-in-down">
+            <div className="relative bg-white dark:bg-gray-900 border-l-4 border-blue-600 text-green-700 dark:text-green-400 px-6 py-4 rounded-xl shadow-lg min-w-[250px]">
+              <div className="font-semibold text-green-700 dark:text-green-300">
+                ✅ Bericht verzonden!
+              </div>
+              <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                Ik neem zo snel mogelijk contact met je op.
+              </p>
+
+              {/* Progress Bar */}
+              <div className="absolute bottom-0 left-0 h-1 bg-blue-600 animate-progress-bar w-full rounded-b-xl" />
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

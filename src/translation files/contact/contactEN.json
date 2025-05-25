@@ -1,0 +1,10 @@
+{
+    "contact": {
+      "title": "Contact me",
+      "subtitle": "Do you have a question or want to collaborate? Feel free to leave a message using the form below.",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
+  }
