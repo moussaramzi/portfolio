@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const { t } = useTranslation("navbar");
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +38,23 @@ const Navbar = () => {
       setTimeout(() => {
         setMenuVisible(false);
       }, 400);
+    }
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/", { replace: false });
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -91,6 +111,7 @@ const Navbar = () => {
           <li>
             <a
               href="#about"
+              onClick={(e) => handleNavClick(e, "about")}
               className="text-white transition-colors font-medium"
             >
               {t("navbar.about")}
@@ -99,6 +120,7 @@ const Navbar = () => {
           <li>
             <a
               href="#projects"
+              onClick={(e) => handleNavClick(e, "projects")}
               className="text-white transition-colors font-medium"
             >
               {t("navbar.projects")}
@@ -107,6 +129,7 @@ const Navbar = () => {
           <li>
             <a
               href="#projects"
+              onClick={(e) => handleNavClick(e, "projects")}
               className="text-white transition-colors font-medium"
             >
               {t("navbar.internship")}
@@ -115,6 +138,7 @@ const Navbar = () => {
           <li>
             <a
               href="#contact"
+              onClick={(e) => handleNavClick(e, "contact")}
               className="text-white transition-colors font-medium"
             >
               {t("navbar.contact")}
@@ -135,7 +159,10 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#about"
-                    onClick={toggleMenu}
+                    onClick={(e) => {
+                      toggleMenu();
+                      handleNavClick(e, "about");
+                    }}
                     className="text-white font-medium text-lg block py-2"
                   >
                     {t("navbar.about")}
@@ -144,7 +171,10 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#projects"
-                    onClick={toggleMenu}
+                    onClick={(e) => {
+                      toggleMenu();
+                      handleNavClick(e, "projects");
+                    }}
                     className="text-white font-medium text-lg block py-2"
                   >
                     {t("navbar.projects")}
@@ -153,7 +183,10 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#contact"
-                    onClick={toggleMenu}
+                    onClick={(e) => {
+                      toggleMenu();
+                      handleNavClick(e, "contact");
+                    }}
                     className="text-white font-medium text-lg block py-2"
                   >
                     {t("navbar.contact")}
