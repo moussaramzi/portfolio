@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, RefObject } from "react";
 
 function getSkillLevel(skill: number): string {
   if (skill >= 90) return "Expert";
@@ -145,49 +145,35 @@ export function TechIcon({
   );
 }
 
+function useSectionVisible<T extends HTMLElement>(threshold = 0.5): [RefObject<T | null>, boolean] {
+  const ref = useRef<T | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new window.IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold }
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.unobserve(element);
+    };
+  }, [threshold]);
+
+  return [ref, visible];
+}
+
 export function Tools() {
   const { t } = useTranslation("tech");
 
-  const [frontendVisible, setFrontendVisible] = useState(false);
-  const [backendVisible, setBackendVisible] = useState(false);
-  const [otherVisible, setOtherVisible] = useState(false);
-
-  const frontendRef = useRef<HTMLDivElement>(null);
-  const backendRef = useRef<HTMLDivElement>(null);
-  const otherRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.target === frontendRef.current) {
-            setFrontendVisible(entry.isIntersecting);
-          }
-          if (entry.target === backendRef.current) {
-            setBackendVisible(entry.isIntersecting);
-          }
-          if (entry.target === otherRef.current) {
-            setOtherVisible(entry.isIntersecting);
-          }
-        });
-      },
-      { threshold: 0.01 }
-    );
-    
-    const frontendElement = frontendRef.current;
-    const backendElement = backendRef.current;
-    const otherElement = otherRef.current;
-    
-    if (frontendElement) observer.observe(frontendElement);
-    if (backendElement) observer.observe(backendElement); 
-    if (otherElement) observer.observe(otherElement);
-
-    return () => {
-      if (frontendElement) observer.unobserve(frontendElement);
-      if (backendElement) observer.unobserve(backendElement);
-      if (otherElement) observer.unobserve(otherElement);
-    };
-  }, []);
+  const [frontendRef, frontendVisible] = useSectionVisible<HTMLDivElement>(0.5);
+  const [backendRef, backendVisible] = useSectionVisible<HTMLDivElement>(0.5);
+  const [otherRef, otherVisible] = useSectionVisible<HTMLDivElement>(0.5);
 
   return (
     <section id="tools" className="py-16 items-center">
