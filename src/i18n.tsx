@@ -14,7 +14,8 @@ import enProjects from './translation files/projects/projectsEN.json';
 import nlProjects from './translation files/projects/projectsNL.json';
 import enContact from './translation files/contact/contactEN.json';
 import nlContact from './translation files/contact/contactNL.json';
-
+import enSetting from './translation files/setting/settingEN.json';
+import nlSetting from './translation files/setting/settingNL.json';
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -26,7 +27,8 @@ i18n
         tech: enTech,
         error: enError,
         projects: enProjects,
-        contact: enContact
+        contact: enContact,
+        setting: enSetting
       },
       nl: {
         about: nlAbout,
@@ -34,12 +36,13 @@ i18n
         tech: nlTech,
         error: nlError,
         projects: nlProjects,
-        contact: nlContact
+        contact: nlContact,
+        setting: nlSetting
 
       }
     },
     fallbackLng: 'en',
-    ns: ['about', 'navbar', 'tech', 'error','projects', 'contact'],
+    ns: ['about', 'navbar', 'tech', 'error','projects', 'contact', 'setting'],
     defaultNS: 'about',
     interpolation: {
       escapeValue: false

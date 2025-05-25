@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Settings, Sun, Moon } from "lucide-react";
 import LanguageSwitcher from "./languageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const SettingsPopup = () => {
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation(["setting"]);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -115,11 +117,11 @@ const SettingsPopup = () => {
         {/* Content */}
         <div className="flex flex-col space-y-4 pb-14">
           <div className="flex items-center justify-between  ">
-            <span className="text-sm ">Language</span>
+            <span className="text-sm ">{t('setting.language')}</span>
             <LanguageSwitcher />
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm  ">Dark Mode</span>
+            <span className="text-sm  ">{t('setting.theme')}</span>
             <button
               onClick={toggleDarkMode}
               className="w-10 h-10 flex items-center justify-center dark:bg-gray-200 bg-gray-700 rounded-full transition-all"
