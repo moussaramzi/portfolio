@@ -12,7 +12,8 @@ import nlError from './translation files/error/errorNL.json';
 import enError from './translation files/error/errorEN.json';
 import enProjects from './translation files/projects/projectsEN.json';
 import nlProjects from './translation files/projects/projectsNL.json';
-
+import enContact from './translation files/contact/contactEN.json';
+import nlContact from './translation files/contact/contactNL.json';
 
 i18n
   .use(LanguageDetector)
@@ -24,18 +25,21 @@ i18n
         navbar: enNavbar,
         tech: enTech,
         error: enError,
-        projects: enProjects
+        projects: enProjects,
+        contact: enContact
       },
       nl: {
         about: nlAbout,
         navbar: nlNavbar,
         tech: nlTech,
         error: nlError,
-        projects: nlProjects
+        projects: nlProjects,
+        contact: nlContact
+
       }
     },
     fallbackLng: 'en',
-    ns: ['about', 'navbar', 'tech', 'error','projects'],
+    ns: ['about', 'navbar', 'tech', 'error','projects', 'contact'],
     defaultNS: 'about',
     interpolation: {
       escapeValue: false
