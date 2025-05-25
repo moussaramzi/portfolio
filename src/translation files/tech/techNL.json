@@ -1,8 +1,9 @@
 {
-    "tech": {
-      "title": "Tech Stack Titel",
-      "frontend": "Frontend Technologiën",
-      "backend": "Backend Technologiën",
-      "other": "Anderen Technologiën"
-    }
+  "tech": {
+    "title": "Technologieën & Tools",
+    "frontend": "Frontend Technologiën",
+    "backend": "Backend Technologiën",
+    "other": "Anderen Technologiën",
+    "description": "Hieronder vind je een overzicht van technologieën en tools waarmee ik heb gewerkt of ervaring mee heb opgedaan tijdens projecten, school en stage. De vaardigheidsbalk toont mijn persoonlijke inschatting van mijn kennisniveau per technologie."
   }
+}
