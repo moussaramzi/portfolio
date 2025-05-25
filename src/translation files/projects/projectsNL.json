@@ -1,0 +1,17 @@
+{
+  "socialapp": {
+    "title": "SocialApp",
+    "description": "Een uitgebreide social media app gebouwd met React Native en Firebase.",
+    "details": "Dit is een gedetailleerde beschrijving van SocialApp. Je kunt hier meer informatie toevoegen."
+  },
+  "taskflow": {
+    "title": "TaskFlow",
+    "description": "Productiviteitsapp in Kanban-stijl met Angular en een Laravel-backend.",
+    "details": "Dit is een gedetailleerde beschrijving van TaskFlow. Je kunt hier meer informatie toevoegen."
+  },
+  "eshop": {
+    "title": "E-Shop",
+    "description": "Een moderne e-commerce platform gebouwd met Next.js, Tailwind CSS en Stripe.",
+    "details": "Dit is een gedetailleerde beschrijving van E-Shop. Je kunt hier meer informatie toevoegen."
+  }
+}

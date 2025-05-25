@@ -1,0 +1,17 @@
+{
+  "socialapp": {
+    "title": "SocialApp",
+    "description": "A full-featured social media app built with React Native and Firebase.",
+    "details": "This is a detailed description of SocialApp. You can add more info here."
+  },
+  "taskflow": {
+    "title": "TaskFlow",
+    "description": "Kanban-style productivity app using Angular and Laravel backend.",
+    "details": "This is a detailed description of TaskFlow. You can add more info here."
+  },
+  "eshop": {
+    "title": "E-Shop",
+    "description": "A sleek eCommerce platform using Next.js, Tailwind CSS, and Stripe.",
+    "details": "This is a detailed description of E-Shop. You can add more info here."
+  }
+}
