@@ -14,10 +14,19 @@ interface TechIconProps {
   label: string;
   skill: number;
   level?: string;
-  srcDark?: string; 
+  srcDark?: string;
+  visible?: boolean; 
 }
 
-export function TechIcon({ src, alt, label, skill, level, srcDark }: TechIconProps) {
+export function TechIcon({
+  src,
+  alt,
+  label,
+  skill,
+  level,
+  srcDark,
+  visible = true, 
+}: TechIconProps) {
   const [loaded, setLoaded] = useState(false);
   const [showSkill, setShowSkill] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -25,10 +34,19 @@ export function TechIcon({ src, alt, label, skill, level, srcDark }: TechIconPro
   const skillLevel = level || getSkillLevel(skill);
 
   const [effectiveSrc, setEffectiveSrc] = useState(src);
+  const iconRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (visible) {
+      setShowSkill(true);
+    } else {
+      setShowSkill(false);
+    }
+  }, [visible]);
 
   useEffect(() => {
     let start: number | null = null;
-    const duration = 400; 
+    const duration = 400;
 
     const animate = (timestamp: number) => {
       if (!start) start = timestamp;
@@ -58,58 +76,60 @@ export function TechIcon({ src, alt, label, skill, level, srcDark }: TechIconPro
   }, [showSkill, skill]);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !document.documentElement) {
-      setEffectiveSrc(src); 
+    if (typeof window === "undefined" || !document.documentElement) {
+      setEffectiveSrc(src);
       return;
     }
 
     const updateSourceBasedOnDarkMode = () => {
-      const isDark = document.documentElement.classList.contains('dark');
+      const isDark = document.documentElement.classList.contains("dark");
       setEffectiveSrc(isDark && srcDark ? srcDark : src);
     };
 
     updateSourceBasedOnDarkMode();
 
     const observer = new MutationObserver(() => {
-      updateSourceBasedOnDarkMode(); 
+      updateSourceBasedOnDarkMode();
     });
 
-    observer.observe(document.documentElement, { 
-      attributes: true, 
-      attributeFilter: ['class'] 
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
     });
 
     return () => {
       observer.disconnect();
     };
-  }, [src, srcDark]); 
+  }, [src, srcDark]);
 
   return (
-    <div 
+    <div
+      ref={iconRef}
       className="flex flex-col items-center cursor-pointer"
-      onMouseEnter={() => setShowSkill(true)}
-      onMouseLeave={() => setShowSkill(false)}
-      onClick={() => setShowSkill((prev) => !prev)}
     >
       <div className="w-16 h-16 mb-2 relative">
         {!loaded && (
           <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse"></div>
         )}
         <img
-          src={effectiveSrc} 
+          src={effectiveSrc}
           alt={alt}
-          className={`w-16 h-16 object-contain rounded-full transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className={`w-16 h-16 object-contain rounded-full transition-opacity duration-500 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
           onLoad={() => setLoaded(true)}
-            onError={() => {
+          onError={() => {
             console.error(`Failed to load image: ${effectiveSrc}`);
-            setEffectiveSrc("/tech/skill-icons--github-dark.svg"); 
+            setEffectiveSrc("/tech/skill-icons--github-dark.svg");
           }}
         />
       </div>
       <span className="mt-2 ">{label}</span>
 
       <div
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${showSkill ? "max-h-20 mt-4" : "max-h-0"} w-32`}
+        className={`overflow-hidden transition-all duration-2000 ease-in-out ${
+          showSkill ? "max-h-20 mt-4" : "max-h-0"
+        } w-32`}
       >
         <div className="bg-gray-300 dark:bg-gray-600 rounded-full h-4 overflow-hidden">
           <div
@@ -118,48 +138,185 @@ export function TechIcon({ src, alt, label, skill, level, srcDark }: TechIconPro
           ></div>
         </div>
         <div className="text-blue-500 dark:text-blue-400 pt-2">
-        {skillLevel}
+          {skillLevel}
         </div>
-      
       </div>
     </div>
   );
 }
 
 export function Tools() {
-    const { t } = useTranslation("tech");
-    return (
-      <section id="tools" className="py-16 items-center">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-10">{t("tech.title")}</h2>
-  
-          <p className="text-lg dark:text-gray-500 mb-8">{t("tech.frontend")}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-            <TechIcon src="/tech/skill-icons--react-dark.svg" alt="React" label="React js/native" skill={90} />
-            <TechIcon src="/tech/skill-icons--angular-dark.svg" alt="Angular" label="Angular" skill={85}  />
-            <TechIcon src="/tech/skill-icons--flutter-dark.svg" alt="Flutter" label="Flutter" skill={50} />
-            <TechIcon src="/tech/skill-icons--sass.svg" alt="Scss" label="Scss" skill={60}  />
-            <TechIcon src="/tech/skill-icons--javascript.svg" alt="Javascript" label="Javascript" skill={80}  />
-            <TechIcon src="/tech/skill-icons--tailwindcss-dark.svg" alt="Tailwind" label="Tailwind css" skill={90}  />
-            <TechIcon src="/tech/skill-icons--typescript.svg" alt="Typescript" label="Typescript" skill={85}  />
-          </div>
-  
-          <p className="text-lg dark:text-gray-500 mb-8">{t("tech.backend")}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-            <TechIcon src="/tech/skill-icons--laravel-dark.svg" alt="Laravel" label="Laravel PHP" skill={50}  />
-            <TechIcon src="/tech/skill-icons--mysql-dark.svg" alt="MySQL" label="MySQL" skill={80} />
-            <TechIcon src="/tech/skill-icons--java-dark.svg" alt="Java" label="Java" skill={75}  />
-            <TechIcon src="/tech/skill-icons--dotnet.svg" alt="DotNet" label="DotNet" skill={85} />
-            <TechIcon src="/tech/skill-icons--nodejs-dark.svg" alt="Nodejs" label="Nodejs" skill={90}  />
-          </div>
+  const { t } = useTranslation("tech");
 
-          <p className="text-lg dark:text-gray-500 mb-8">{t("tech.other")}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-          <TechIcon src="/tech/skill-icons--github-dark.svg" srcDark="/tech/skill-icons--github.svg" alt="Git" label="Git" skill={75} />
-          <TechIcon src="/tech/skill-icons--docker.svg" alt="Docker" label="Docker" skill={65} />
+  const [frontendVisible, setFrontendVisible] = useState(false);
+  const [backendVisible, setBackendVisible] = useState(false);
+  const [otherVisible, setOtherVisible] = useState(false);
 
-          </div>
-        </div>
-      </section>
+  const frontendRef = useRef<HTMLDivElement>(null);
+  const backendRef = useRef<HTMLDivElement>(null);
+  const otherRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === frontendRef.current) {
+            setFrontendVisible(entry.isIntersecting);
+          }
+          if (entry.target === backendRef.current) {
+            setBackendVisible(entry.isIntersecting);
+          }
+          if (entry.target === otherRef.current) {
+            setOtherVisible(entry.isIntersecting);
+          }
+        });
+      },
+      { threshold: 0.01 }
     );
-  }
+    
+    const frontendElement = frontendRef.current;
+    const backendElement = backendRef.current;
+    const otherElement = otherRef.current;
+    
+    if (frontendElement) observer.observe(frontendElement);
+    if (backendElement) observer.observe(backendElement); 
+    if (otherElement) observer.observe(otherElement);
+
+    return () => {
+      if (frontendElement) observer.unobserve(frontendElement);
+      if (backendElement) observer.unobserve(backendElement);
+      if (otherElement) observer.unobserve(otherElement);
+    };
+  }, []);
+
+  return (
+    <section id="tools" className="py-16 items-center">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold mb-4 text-blue-600">{t("tech.title")}</h2>
+        <p className="text-lg mb-10 lg:mx-52">
+         {t("tech.description")}
+        </p>
+
+        <p className="text-lg  mb-8">{t("tech.frontend")}</p>
+        <div
+          ref={frontendRef}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+        >
+          <TechIcon
+            src="/tech/skill-icons--react-dark.svg"
+            alt="React"
+            label="React js/native"
+            skill={60}
+            visible={frontendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--angular-dark.svg"
+            alt="Angular"
+            label="Angular"
+            skill={65}
+            visible={frontendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--flutter-dark.svg"
+            alt="Flutter"
+            label="Flutter"
+            skill={35}
+            visible={frontendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--sass.svg"
+            alt="Scss"
+            label="Scss"
+            skill={60}
+            visible={frontendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--javascript.svg"
+            alt="Javascript"
+            label="Javascript"
+            skill={78}
+            visible={frontendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--tailwindcss-dark.svg"
+            alt="Tailwind"
+            label="Tailwind css"
+            skill={80}
+            visible={frontendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--typescript.svg"
+            alt="Typescript"
+            label="Typescript"
+            skill={80}
+            visible={frontendVisible}
+          />
+        </div>
+
+        <p className="text-lg  mb-8">{t("tech.backend")}</p>
+        <div
+          ref={backendRef}
+          className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16"
+        >
+          <TechIcon
+            src="/tech/skill-icons--laravel-dark.svg"
+            alt="Laravel"
+            label="Laravel PHP"
+            skill={55}
+            visible={backendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--mysql-dark.svg"
+            alt="MySQL"
+            label="MySQL"
+            skill={80}
+            visible={backendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--java-dark.svg"
+            alt="Java"
+            label="Java"
+            skill={65}
+            visible={backendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--dotnet.svg"
+            alt="DotNet"
+            label="DotNet"
+            skill={80}
+            visible={backendVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--nodejs-dark.svg"
+            alt="Nodejs"
+            label="Nodejs"
+            skill={85}
+            visible={backendVisible}
+          />
+        </div>
+
+        <p className="text-lg  mb-8">{t("tech.other")}</p>
+        <div
+          ref={otherRef}
+          className="grid grid-cols-2 md:grid-cols-4 gap-10"
+        >
+          <TechIcon
+            src="/tech/skill-icons--github-dark.svg"
+            srcDark="/tech/skill-icons--github.svg"
+            alt="Git"
+            label="Git"
+            skill={75}
+            visible={otherVisible}
+          />
+          <TechIcon
+            src="/tech/skill-icons--docker.svg"
+            alt="Docker"
+            label="Docker"
+            skill={65}
+            visible={otherVisible}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}

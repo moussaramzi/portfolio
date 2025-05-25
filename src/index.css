@@ -15,13 +15,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h1, h2, h3{
+  color: #2164f3;
+}
 
 html.dark {
   color: rgba(255, 255, 255, 0.87); 
   background-color: #242424; 
 }
 
-/* Responsive margins */
 @media (min-width: 768px) {
   :root {
     margin: 5%;

@@ -1,8 +1,9 @@
 {
   "tech": {
-    "title": "Tech Stack Title",
+    "title": "Technologies & Tools",
     "frontend": "Frontend Technologies",
     "backend": "Backend Technologies",
-    "other": "Other Technologies"
+    "other": "Other Technologies",
+    "description": "Below is an overview of technologies and tools I have worked with or gained experience in during projects, school, and internships. The skill bar represents my personal assessment of my knowledge level for each technology."
   }
 }
