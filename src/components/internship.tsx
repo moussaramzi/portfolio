@@ -1,6 +1,8 @@
+import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 export default function Internship() {
+  const { t } = useTranslation("internship");
   return (
     <section
       id="internship"
@@ -20,31 +22,29 @@ export default function Internship() {
           {/* Content */}
           <div className="w-full md:w-2/3">
             <h2 className="text-5xl font-bold mb-6 text-blue-700 dark:text-blue-400 tracking-tight">
-              Internship @ Strobbo
+              {t("internship.title")}
             </h2>
 
             <p className="mb-8 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              During my internship at{" "}
-              <span className="font-semibold">Strobbo</span>, I focused on
-              backend development to improve both the internal tooling and the
-              main application. One of my main tasks was enabling full
-              consultant management within the internal tools — including
-              creating consultants, assigning them to clients, modifying access
-              rights, and revoking access when needed. On the application side,
-              I implemented audit logging to track which consultant performed
-              which actions, and developed a feature that allows users to switch
-              between clients without logging out. At the end of the internship,
-              I also contributed to the creation of a dashboard in the internal
-              tooling, which presents key data through various charts and
-              visualizations to support better internal decision-making.
+              <Trans>
+                {t("internship.description", {
+                  strobbo: t("internship.strobbo"),
+                })}
+              </Trans>
             </p>
 
             {/* Documents */}
             <div className="mb-8 flex flex-wrap gap-4">
               {[
-                { label: "Internship Report", file: "projectPlan.pdf" },
-                { label: "Assessment", file: "assessment.pdf" },
-                { label: "Certificate", file: "certificate.pdf" },
+                { label: "Project Plan", file: "projectPlan.pdf" },
+                {
+                  label: `${t("internship.realization")}`,
+                  file: "assessment.pdf",
+                },
+                {
+                  label: `${t("internship.reflection")}`,
+                  file: "certificate.pdf",
+                },
               ].map((doc) => (
                 <a
                   key={doc.label}
@@ -63,7 +63,7 @@ export default function Internship() {
               to="/projects/internship"
               className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-md font-semibold shadow-md transition duration-300"
             >
-              Learn more about my internship →
+              {t("internship.more")}
             </Link>
           </div>
         </div>

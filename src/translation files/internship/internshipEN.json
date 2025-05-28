@@ -1,0 +1,12 @@
+
+  {
+    "internship": {
+      "title": "Internship @ Strobbo",
+      "realization": "Realization",
+      "reflection": "Reflection",
+      "more": "Learn more about my internship →",
+      "strobbo":"Strobbo",
+      "description": "During my internship at <strong>{{strobbo}}</strong>, I focused on backend development to improve both the internal tooling and the main application. One of my main tasks was enabling full consultant management within the internal tools — including creating consultants, assigning them to clients, modifying access rights, and revoking access when needed. On the application side, I implemented audit logging to track which consultant performed which actions, and developed a feature that allows users to switch between clients without logging out. At the end of the internship, I also contributed to the creation of a dashboard in the internal tooling, which presents key data through various charts and visualizations to support better internal decision-making."
+
+    }
+  }

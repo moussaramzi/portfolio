@@ -1,0 +1,12 @@
+
+  {
+    "internship": {
+      "title": "Stage @ Strobbo",
+      "realization": "Realisatie",
+      "reflection": "Reflectie",
+      "more": "Lees meer over mijn stage →",
+      "strobbo":"Strobbo",
+      "description": "Tijdens mijn stage bij <strong>{{strobbo}}</strong> lag de focus op backend-ontwikkeling om zowel de interne tools als de hoofdapplicatie te verbeteren. Een van mijn belangrijkste taken was het mogelijk maken van volledige consultantbeheer binnen de interne tools — inclusief het aanmaken van consultants, het toewijzen aan klanten, het aanpassen van toegangsrechten en het intrekken van toegang wanneer nodig. Aan de applicatiekant implementeerde ik audit logging om bij te houden welke consultant welke acties heeft uitgevoerd, en ontwikkelde ik een functie waarmee gebruikers kunnen schakelen tussen klanten zonder uit te loggen. Aan het einde van de stage droeg ik ook bij aan de creatie van een dashboard in de interne tools, dat belangrijke gegevens presenteert via verschillende grafieken en visualisaties ter ondersteuning van betere interne besluitvorming."
+
+    }
+  }
