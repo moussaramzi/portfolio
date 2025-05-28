@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.4",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.10.0",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
+    "@types/node": "^22.15.24",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/react-router-dom": "^5.3.3",

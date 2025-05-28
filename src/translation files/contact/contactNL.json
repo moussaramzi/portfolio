@@ -6,6 +6,15 @@
       "name": "Naam",
       "email": "Email",
       "message": "Bericht",
-      "send": "Verstuur"
+      "send": "Verstuur",
+      "success": {
+        "title": "✅ Bericht succesvol verzonden!",
+        "description": "Bedankt voor je bericht. Ik neem zo snel mogelijk contact met je op."
+      },
+      "error": {
+        "title": "❌ Fout bij het verzenden van het bericht!",
+        "description": "Er is een fout opgetreden bij het verzenden van je bericht. Probeer het later opnieuw."
+      }
+
     }
   }
