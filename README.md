@@ -38,5 +38,46 @@ This project showcases my skills, projects, and technologies I use — built wit
 
 ---
 
+## 🛠️ Setup & Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/moussaramzi/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables:**
+
+   Create a `.env.local` file in the root of the project and add your [EmailJS](https://www.emailjs.com/) credentials:
+   ```env
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+   > **Note:** Never commit `.env.local` to version control. It is already in `.gitignore`.
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser:**  
+   Visit [http://localhost:5173](http://localhost:5173) to view your portfolio.
+
+---
+
+## 📬 Contact Form Setup
+
+- The contact form uses [EmailJS](https://www.emailjs.com/) to send emails directly from the site.
+- Make sure to set up your EmailJS account, service, template, and public key.
+- The required environment variables are described above.
+
+---
 
 

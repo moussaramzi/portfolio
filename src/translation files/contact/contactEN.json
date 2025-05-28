@@ -5,6 +5,14 @@
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "send": "Send"
+      "send": "Send",
+      "success":{
+        "title": "✅ Message sent successfully!",
+        "description": "Thank you for reaching out. I will get back to you as soon as possible."
+      },
+      "error": {
+        "title": "❌ Error sending message!",
+        "description": "An error occurred while sending your message. Please try again later."
+      }
     }
   }
