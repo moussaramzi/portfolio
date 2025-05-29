@@ -29,29 +29,35 @@ export default function Footer() {
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           <div className="px-5 py-2">
             <a
-              href="#about"
               onClick={(e) => handleFooterNavClick(e, "about")}
-              className="text-base leading-6 hover:text-blue-600"
+              className="text-base leading-6 hover:text-blue-600 cursor-pointer"
             >
               {t("navbar.about")}
             </a>
           </div>
           <div className="px-5 py-2">
             <a
-              href="#contact"
-              onClick={(e) => handleFooterNavClick(e, "contact")}
-              className="text-base leading-6 hover:text-blue-600"
+              onClick={(e) => handleFooterNavClick(e, "internship")}
+              className="text-base leading-6 hover:text-blue-600 cursor-pointer"
             >
-              {t("navbar.contact")}
+              {t("navbar.internship")}
+            </a>
+          </div>
+                <div className="px-5 py-2">
+            <a
+              onClick={(e) => handleFooterNavClick(e, "projects")}
+              className="text-base leading-6 hover:text-blue-600 cursor-pointer"
+            >
+              {t("navbar.projects")}
             </a>
           </div>
           <div className="px-5 py-2">
             <a
-              href="#projects"
-              onClick={(e) => handleFooterNavClick(e, "projects")}
-              className="text-base leading-6 hover:text-blue-600"
+              href="#contact"
+              onClick={(e) => handleFooterNavClick(e, "contact")}
+              className="text-base leading-6 hover:text-blue-600 cursor-pointer"
             >
-              {t("navbar.internship")}
+              {t("navbar.contact")}
             </a>
           </div>
         </nav>

@@ -110,11 +110,18 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-6">
           <li>
             <a
-              href="#about"
               onClick={(e) => handleNavClick(e, "about")}
-              className="text-white transition-colors font-medium"
+              className="text-white transition-colors font-medium cursor-pointer"
             >
               {t("navbar.about")}
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={(e) => handleNavClick(e, "internship")}
+              className="text-white transition-colors font-medium cursor-pointer"
+            >
+              {t("navbar.internship")}
             </a>
           </li>
           <li>
@@ -128,18 +135,8 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="#projects"
-              onClick={(e) => handleNavClick(e, "projects")}
-              className="text-white transition-colors font-medium"
-            >
-              {t("navbar.internship")}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
               onClick={(e) => handleNavClick(e, "contact")}
-              className="text-white transition-colors font-medium"
+              className="text-white transition-colors font-medium cursor-pointer"
             >
               {t("navbar.contact")}
             </a>
@@ -158,7 +155,6 @@ const Navbar = () => {
               <ul className="space-y-6">
                 <li>
                   <a
-                    href="#about"
                     onClick={(e) => {
                       toggleMenu();
                       handleNavClick(e, "about");
@@ -170,7 +166,17 @@ const Navbar = () => {
                 </li>
                 <li>
                   <a
-                    href="#projects"
+                    onClick={(e) => {
+                      toggleMenu();
+                      handleNavClick(e, "internship");
+                    }}
+                    className="text-white font-medium text-lg block py-2"
+                  >
+                    {t("navbar.internship")}
+                  </a>
+                </li>
+                <li>
+                  <a
                     onClick={(e) => {
                       toggleMenu();
                       handleNavClick(e, "projects");
@@ -182,7 +188,6 @@ const Navbar = () => {
                 </li>
                 <li>
                   <a
-                    href="#contact"
                     onClick={(e) => {
                       toggleMenu();
                       handleNavClick(e, "contact");
