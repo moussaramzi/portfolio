@@ -118,19 +118,19 @@ const Navbar = () => {
           </li>
           <li>
             <a
+              onClick={(e) => handleNavClick(e, "internship")}
+              className="text-white transition-colors font-medium cursor-pointer"
+            >
+              {t("navbar.internship")}
+            </a>
+          </li>
+          <li>
+            <a
               href="#projects"
               onClick={(e) => handleNavClick(e, "projects")}
               className="text-white transition-colors font-medium"
             >
               {t("navbar.projects")}
-            </a>
-          </li>
-          <li>
-            <a
-              onClick={(e) => handleNavClick(e, "internship")}
-              className="text-white transition-colors font-medium cursor-pointer"
-            >
-              {t("navbar.internship")}
             </a>
           </li>
           <li>

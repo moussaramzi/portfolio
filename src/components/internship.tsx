@@ -13,7 +13,7 @@ export default function Internship() {
           {/* Logo */}
           <div className="w-full md:w-1/3 flex justify-center md:justify-start">
             <img
-              src="/strobbo-logo.webp"
+              src="/internship/strobbo-logo.webp"
               alt="Company Logo"
               className="w-80 h-auto object-contain drop-shadow-xl"
             />
@@ -25,7 +25,7 @@ export default function Internship() {
               {t("internship.title")}
             </h2>
 
-            <p className="mb-8 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="mb-8 text-lg leading-relaxed">
               <Trans>
                 {t("internship.description", {
                   strobbo: t("internship.strobbo"),
@@ -43,7 +43,7 @@ export default function Internship() {
                 },
                 {
                   label: `${t("internship.reflection")}`,
-                  file: "certificate.pdf",
+                  file: "reflectie.pdf",
                 },
               ].map((doc) => (
                 <a
@@ -60,7 +60,7 @@ export default function Internship() {
 
             {/* More Info */}
             <Link
-              to="/projects/internship"
+              to="/internship"
               className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-md font-semibold shadow-md transition duration-300"
             >
               {t("internship.more")}

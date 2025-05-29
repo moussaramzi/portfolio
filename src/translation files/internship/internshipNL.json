@@ -1,12 +1,34 @@
-
-  {
+{
     "internship": {
       "title": "Stage @ Strobbo",
       "realization": "Realisatie",
       "reflection": "Reflectie",
       "more": "Lees meer over mijn stage →",
-      "strobbo":"Strobbo",
-      "description": "Tijdens mijn stage bij <strong>{{strobbo}}</strong> lag de focus op backend-ontwikkeling om zowel de interne tools als de hoofdapplicatie te verbeteren. Een van mijn belangrijkste taken was het mogelijk maken van volledige consultantbeheer binnen de interne tools — inclusief het aanmaken van consultants, het toewijzen aan klanten, het aanpassen van toegangsrechten en het intrekken van toegang wanneer nodig. Aan de applicatiekant implementeerde ik audit logging om bij te houden welke consultant welke acties heeft uitgevoerd, en ontwikkelde ik een functie waarmee gebruikers kunnen schakelen tussen klanten zonder uit te loggen. Aan het einde van de stage droeg ik ook bij aan de creatie van een dashboard in de interne tools, dat belangrijke gegevens presenteert via verschillende grafieken en visualisaties ter ondersteuning van betere interne besluitvorming."
-
+      "strobbo": "Strobbo",
+      "description": "Tijdens mijn stage bij <strong>{{strobbo}}</strong> lag de focus op backend-ontwikkeling om zowel de interne tools als de hoofdapplicatie te verbeteren. Een van mijn belangrijkste taken was het mogelijk maken van volledige consultantbeheer binnen de interne tools — inclusief het aanmaken van consultants, het toewijzen aan klanten, het aanpassen van toegangsrechten en het intrekken van toegang wanneer nodig. Aan de applicatiekant implementeerde ik audit logging om bij te houden welke consultant welke acties heeft uitgevoerd, en ontwikkelde ik een functie waarmee gebruikers kunnen schakelen tussen klanten zonder uit te loggen. Aan het einde van de stage droeg ik ook bij aan de creatie van een dashboard in de interne tools, dat belangrijke gegevens presenteert via verschillende grafieken en visualisaties ter ondersteuning van betere interne besluitvorming.",
+      "details": {
+        "back": "Terug naar stage",
+        "consultantManagement": "Consultantbeheer",
+        "consultantManagementP1": "In het begin van mijn stage zijn we gestart met het ontwikkelen van functionaliteiten rond het beheren van interne consultants. Voorheen was er geen manier om te zien welke consultant bij welke klant inlogde. Ik heb ervoor gezorgd dat dit zichtbaar werd in de interne tooling. Daarnaast implementeerde ik de mogelijkheid om consultants toe te voegen, toegang tot klanten toe te wijzen of in te trekken.",
+        "consultantManagementP2": "Ook kunnen de login logs nu bekeken worden op zowel consultantniveau als klantniveau. Dit maakt het eenvoudiger om foutopsporing en audits uit te voeren.",
+        "consultantImage1": "Overzicht van consultants hun klanttoegang en login logs",
+        "consultantImage2": "Overzicht van alle login logs",
+        "consultantImage3": "Login logs per klant",
+        "consultantImage4": "Beheer van consultants per klant",
+        "frontendBackendNote": "Frontend ontwikkeld door mijn medestagiair, backend ontwikkeld door mij.",
+        "auditLogging": "Audit Logging",
+        "auditLoggingP1": "Voor de audit logging heb ik ervoor gezorgd dat bij het inloggen de e-mail van de consultant wordt opgeslagen in de bearertoken. Hierdoor kunnen aanpassingen in de applicatie gelinkt worden aan de juiste consultant. Dit maakt het mogelijk om exact te traceren wie welke wijziging heeft uitgevoerd.",
+        "auditLoggingP2": "Daarnaast kunnen consultants andere gebruikers impersonaten. Ik heb ervoor gezorgd dat ook deze acties correct worden gelogd, zodat zichtbaar is dat een wijziging is uitgevoerd door een geimpersonate gebruiker namens een consultant.",
+        "auditLoggingImage": "Audit Logging",
+        "tenantSwitching": "Tenant Switching",
+        "tenantSwitchingP1": "Voorheen moesten gebruikers eerst uitloggen om van klant te kunnen wisselen. Ik heb functionaliteit geïmplementeerd waarmee je als consultant snel tussen klanten kunt wisselen zonder opnieuw te hoeven inloggen. Dit verhoogt de efficiëntie aanzienlijk.",
+        "tenantSwitchingImage": "Tenant Switching Functionaliteit",
+        "dashboardInsights": "Dashboard & Insights",
+        "dashboardInsightsP1": "Als afsluiting van mijn stage heb ik data opgehaald en verwerkt om inzichten te geven via een dashboard. Voorbeelden van grafieken die hierin worden getoond zijn onder andere: het aantal logins in de huidige maand, logins per weekdag, en een overzicht van de subjects die zijn opgegeven als reden voor het inloggen. Dit zijn slechts enkele voorbeelden – er zijn meerdere inzichten beschikbaar in het dashboard die helpen bij het analyseren van consultant- en klantactiviteit.",
+        "dashboardInsightsImage": "Dashboard Insights",
+        "enlargeImage": "Vergroot afbeelding",
+        "moreInfoTitle": "Meer info?",
+        "moreInfo": "Als je meer wil weten over mijn stageproject, neem dan gerust een kijkje in de onderstaande documenten."
+      }
     }
-  }
+}

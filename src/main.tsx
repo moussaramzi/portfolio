@@ -9,6 +9,7 @@ import Footer from "./components/footer";
 import NotFound404 from "./components/notFound404";
 import Home from "./home";
 import ProjectDetail from "./components/projectDetail";
+import InternshipDetail from "./components/internshipDetails";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects/:projectId" element={<ProjectDetail />} />
+        <Route path="/internship" element={<InternshipDetail />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
       <Footer />

@@ -1,12 +1,35 @@
-
-  {
+{
     "internship": {
       "title": "Internship @ Strobbo",
       "realization": "Realization",
       "reflection": "Reflection",
       "more": "Learn more about my internship →",
-      "strobbo":"Strobbo",
-      "description": "During my internship at <strong>{{strobbo}}</strong>, I focused on backend development to improve both the internal tooling and the main application. One of my main tasks was enabling full consultant management within the internal tools — including creating consultants, assigning them to clients, modifying access rights, and revoking access when needed. On the application side, I implemented audit logging to track which consultant performed which actions, and developed a feature that allows users to switch between clients without logging out. At the end of the internship, I also contributed to the creation of a dashboard in the internal tooling, which presents key data through various charts and visualizations to support better internal decision-making."
+      "strobbo": "Strobbo",
+      "description": "During my internship at <strong>{{strobbo}}</strong>, I focused on backend development to improve both the internal tooling and the main application. One of my main tasks was enabling full consultant management within the internal tools — including creating consultants, assigning them to clients, modifying access rights, and revoking access when needed. On the application side, I implemented audit logging to track which consultant performed which actions, and developed a feature that allows users to switch between clients without logging out. At the end of the internship, I also contributed to the creation of a dashboard in the internal tooling, which presents key data through various charts and visualizations to support better internal decision-making.",
+      "details": {
+        "back": "Back to Internship",
+        "consultantManagement": "Consultant Management",
+        "consultantManagementP1": "At the start of my internship, we began developing features for managing internal consultants. Previously, there was no way to see which consultant logged in to which client. I made this visible in the internal tooling. I also implemented the ability to add consultants and assign or revoke client access.",
+        "consultantManagementP2": "Login logs can now be viewed at both consultant and client level. This makes troubleshooting and audits easier.",
+        "consultantImage1": "Overview of consultants' client access and login logs",
+        "consultantImage2": "Overview of all login logs",
+        "consultantImage3": "Login logs per client",
+        "consultantImage4": "Managing consultants per client",
+        "frontendBackendNote": "Frontend developed by my fellow intern, backend developed by me.",
+        "auditLogging": "Audit Logging",
+        "auditLoggingP1": "For audit logging, I ensured that the consultant's email is stored in the bearer token upon login. This allows changes in the application to be linked to the correct consultant, making it possible to trace exactly who made which change.",
+        "auditLoggingP2": "Consultants can also impersonate other users. I made sure these actions are logged correctly, so it is visible that a change was made by an impersonated user on behalf of a consultant.",
+        "auditLoggingImage": "Audit Logging",
+        "tenantSwitching": "Tenant Switching",
+        "tenantSwitchingP1": "Previously, users had to log out before switching clients. I implemented functionality that allows consultants to quickly switch between clients without having to log in again. This greatly increases efficiency.",
+        "tenantSwitchingImage": "Tenant Switching Functionality",
+        "dashboardInsights": "Dashboard & Insights",
+        "dashboardInsightsP1": "To conclude my internship, I retrieved and processed data to provide insights via a dashboard. Examples of charts shown include: the number of logins in the current month, logins per weekday, and an overview of the subjects given as reasons for logging in. These are just a few examples – there are several insights available in the dashboard to help analyze consultant and client activity.",
+        "dashboardInsightsImage": "Dashboard Insights",
+        "enlargeImage": "Enlarge image",
+        "moreInfoTitle": "More Info?",
+        "moreInfo": " If you want to know more about my internship project, feel free to check out the documents below."
 
+      }
     }
-  }
+}
