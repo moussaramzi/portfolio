@@ -1,19 +1,29 @@
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 export default function AboutMe() {
   const { t, i18n } = useTranslation("about");
+  const cvHref = i18n.language === "en" ? "/CV-EN.pdf" : "/CV.pdf";
 
-    const cvHref = i18n.language === "en" ? "/CV-EN.pdf" : "/CV.pdf";
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <section id="about" className="py-16">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1 flex justify-center">
-          <img
-            src="/profile.webp"
-            alt="Profile"
-            className="w-68 h-68 object-cover rounded-full border-4 border-blue-500 shadow-lg"
-          />
+          <div className="w-68 h-68 relative flex items-center justify-center">
+            {!imgLoaded && (
+              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse"></div>
+            )}
+            <img
+              src="/profile.webp"
+              alt="Profile"
+              className={`w-68 h-68 object-cover rounded-full border-4 border-blue-500 shadow-lg transition-opacity duration-500 ${
+                imgLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              onLoad={() => setImgLoaded(true)}
+            />
+          </div>
         </div>
 
         <div className="flex-1 text-center md:text-left">
@@ -29,16 +39,14 @@ export default function AboutMe() {
               <li>
                 <strong>{t("about.course.thomasmore")}: </strong> <br />
                 Thomas More
-                
               </li>
               <li>
                 <strong>{t("about.course.college")}:  </strong> <br />
                 Sint-Jan Berchmanscollege
-                
               </li>
             </ul>
 
-          <div className="mt-8 text-center md:text-left">
+            <div className="mt-8 text-center md:text-left">
               <a
                 href={cvHref}
                 target="_blank"

@@ -6,7 +6,7 @@ export default function Internship() {
   return (
     <section
       id="internship"
-      className="py-16 my-16 transition-colors duration-500"
+      className="py-12 my-16 transition-colors duration-500"
     >
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-12">

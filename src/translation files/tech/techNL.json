@@ -4,6 +4,13 @@
     "frontend": "Frontend Technologiën",
     "backend": "Backend Technologiën",
     "other": "Anderen Technologiën",
-    "description": "Hieronder vind je een overzicht van technologieën en tools waarmee ik heb gewerkt of ervaring mee heb opgedaan tijdens projecten, school en stage. De vaardigheidsbalk toont mijn persoonlijke inschatting van mijn kennisniveau per technologie."
+    "description": "Hieronder vind je een overzicht van technologieën en tools waarmee ik heb gewerkt of ervaring mee heb opgedaan tijdens projecten, school en stage. De vaardigheidsbalk toont mijn persoonlijke inschatting van mijn kennisniveau per technologie.",
+    "level": {
+      "expert": "Expert",
+      "advanced": "Gevorderd",
+      "intermediate": "Gemiddeld",
+      "basic": "Basis",
+      "beginner": "Beginner"
+    }
   }
 }

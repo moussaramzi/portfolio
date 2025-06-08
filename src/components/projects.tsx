@@ -71,7 +71,7 @@ export function Projects() {
   const { t } = useTranslation(["projects"]);
 
   return (
-    <section id="projects" className="relative pt-32 scroll-mt-20">
+    <section id="projects" className="relative pt-22 scroll-mt-20">
       <h2 className="text-4xl font-bold text-center mb-20 top-16 sticky  py-2 ">
         {t("htitle")}
       </h2>
