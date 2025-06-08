@@ -18,9 +18,22 @@
     "contribution3": "Het project vereiste een nauwe samenwerking tussen software en hardware, en ik ben trots op het resultaat dat we als team hebben neergezet. Voor meer technische details en de volledige broncode, kan je de GitHub-repository van BeeSafe bekijken.",
     "github": "🐝 Bekijk GitHub Repository"
   },
-  "taskflow": {
+  "recipe": {
     "title": "Recepten Microservice",
-    "description": "Productiviteitsapp in Kanban-stijl met Angular en een Laravel-backend."
+    "description": "Een modern receptenplatform gebouwd met microservices waarin gebruikers eenvoudig recepten kunnen beheren en feedback kunnen geven. Dankzij OAuth2-authenticatie en een centrale API Gateway is de applicatie zowel veilig als schaalbaar.",
+    "aboutTitle": "Over het project",
+    "about": "Dit receptenplatform is een project dat ik volledig zelf heb ontwikkeld, van frontend tot backend. Het maakt gebruik van een microservices-architectuur waarbij recepten, gebruikers en reacties elk door een aparte service beheerd worden.",
+    "microservicesTitle": "Microservices & Databases",
+    "microservices": "De receptenservice is gekoppeld aan een MySQL-database en beheert alle CRUD-operaties voor recepten, inclusief het ophalen van reacties en auteursinformatie. De commentaarservice gebruikt een MongoDB-database om gebruikersreacties op te slaan en efficiënt op te vragen per recept. Tot slot beheert de gebruikersservice de registratie en het ophalen van gebruikersinformatie, eveneens via MongoDB.",
+    "authTitle": "Authenticatie & API Gateway",
+    "auth": "Alle clientaanvragen worden afgehandeld via een centrale API Gateway, die de communicatie naar de juiste service doorstuurt. Deze gateway verwerkt ook de OAuth2-authenticatie via Google One-Tap login en zorgt voor de beveiliging van de endpoints.",
+    "frontendTitle": "Frontend",
+    "frontend": "Voor de frontend heb ik een Angular-applicatie gebouwd. Gebruikers kunnen inloggen met Google dankzij OAuth2-authenticatie, recepten bekijken, toevoegen, bewerken of verwijderen, en reacties achterlaten op recepten. Alle interactie met de backend verloopt via de API Gateway.",
+    "internalTitle": "Interne communicatie & Containerisatie",
+    "internal": "De microservices communiceren onderling met WebClient, wat zorgt voor een vlotte en schaalbare interactie. Daarnaast is het volledige project gedockerized, waardoor het eenvoudig lokaal of in een cloudomgeving op te zetten is met behulp van Docker Compose.",
+    "resultTitle": "Resultaat",
+    "result": "Dankzij de duidelijke afbakening van verantwoordelijkheden per service is het platform schaalbaar, onderhoudsvriendelijk en klaar voor uitbreiding. Het project toont mijn vaardigheden in fullstack ontwikkeling, microservices, en moderne DevOps-technieken.",
+    "github": "🍽️ Bekijk GitHub Repository"
   },
   "eshop": {
     "title": "POS systeem",

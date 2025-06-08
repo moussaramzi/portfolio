@@ -18,9 +18,22 @@
     "contribution3": "The project required close collaboration between software and hardware, and I am proud of the result we achieved as a team. For more technical details and the full source code, you can check out the BeeSafe GitHub repository.",
     "github": "🐝 View GitHub Repository"
   },
-  "taskflow": {
+  "recipe": {
     "title": "Recipe Microservice",
-    "description": "Kanban-style productivity app using Angular and Laravel backend."
+    "description": "A modern recipe platform built with a microservices architecture, allowing users to easily manage recipes and leave feedback. With OAuth2 authentication and a centralized API Gateway, the application is both secure and scalable.",
+    "aboutTitle": "About the project",
+    "about": "This recipe platform is a project I developed entirely myself, from frontend to backend. It uses a microservices architecture where recipes, users, and comments are each managed by a separate service.",
+    "microservicesTitle": "Microservices & Databases",
+    "microservices": "The recipe service is connected to a MySQL database and manages all CRUD operations for recipes, including retrieving comments and author information. The comment service uses a MongoDB database to store user comments and efficiently retrieve them per recipe. Finally, the user service manages registration and retrieval of user information, also via MongoDB.",
+    "authTitle": "Authentication & API Gateway",
+    "auth": "All client requests are handled via a central API Gateway, which routes communication to the appropriate service. This gateway also handles OAuth2 authentication via Google One-Tap login and secures the endpoints.",
+    "frontendTitle": "Frontend",
+    "frontend": "For the frontend, I built an Angular application. Users can log in with Google thanks to OAuth2 authentication, view, add, edit, or delete recipes, and leave comments on recipes. All interaction with the backend goes through the API Gateway.",
+    "internalTitle": "Internal Communication & Containerization",
+    "internal": "The microservices communicate with each other using WebClient, ensuring smooth and scalable interaction. The entire project is dockerized, making it easy to set up locally or in a cloud environment using Docker Compose.",
+    "resultTitle": "Result",
+    "result": "Thanks to the clear separation of responsibilities per service, the platform is scalable, maintainable, and ready for expansion. The project demonstrates my skills in fullstack development, microservices, and modern DevOps techniques.",
+    "github": "🍽️ View GitHub Repository"
   },
   "eshop": {
     "title": "POS system",

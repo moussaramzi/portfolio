@@ -5,7 +5,12 @@ export interface Project {
   image: string;
   link: string;
   detailsKey?: string;
-  technologies?: { src: string;  srcDark?: string; alt: string; labelKey: string }[];
+  technologies?: {
+    src: string;
+    srcDark?: string;
+    alt: string;
+    labelKey: string;
+  }[];
 }
 
 export const projects: Project[] = [
@@ -40,21 +45,37 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "taskflow",
-    titleKey: "taskflow.title",
-    descriptionKey: "taskflow.description",
+    id: "recipe-microservice",
+    titleKey: "recipe.title",
+    descriptionKey: "recipe.description",
     image: "/projects/microservice/recipe-microservice.png",
-    link: "/projects/taskflow",
+    link: "/projects/recipe-microservice",
     technologies: [
       {
-        src: "/tech/skill-icons--react-dark.svg",
-        alt: "React Native",
-        labelKey: "tech.reactNative",
+        src: "/tech/skill-icons--docker.svg",
+        alt: "Docker",
+        labelKey: "tech.docker",
       },
       {
+        src: "/tech/skill-icons--java-dark.svg",
+        alt: "Java",
+        labelKey: "tech.java",
+      },
+      {
+        src: "/tech/skill-icons--github-dark.svg",
+        srcDark: "/tech/skill-icons--github.svg",
+        alt: "GitHub",
+        labelKey: "tech.github",
+      },
+         {
         src: "/tech/skill-icons--mysql-dark.svg",
         alt: "Mysql",
         labelKey: "tech.mysql",
+      },
+         {
+        src: "/tech/skill-icons--mongodb.svg",
+        alt: "MongoDB",
+        labelKey: "tech.mongodb",
       },
     ],
   },
