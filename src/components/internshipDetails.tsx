@@ -208,12 +208,22 @@ export default function InternshipDetail() {
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
           onClick={closeImage}
         >
-          <img
-            src={modalImage}
-            alt={t("internship.details.enlargeImage")}
-            className="max-w-[95vw] max-h-[80vh] w-auto h-auto rounded-lg shadow-lg m-2"
-            style={{ objectFit: "contain" }}
-          />
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={closeImage}
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-xl text-white bg-black bg-opacity-50 rounded-full p-0 hover:bg-opacity-80 transition cursor-pointer"
+              aria-label={t("internship.details.closeImage") || "Close"}
+              style={{ zIndex: 10 }}
+            >
+              ✖
+            </button>
+            <img
+              src={modalImage}
+              alt={t("internship.details.enlargeImage")}
+              className="max-w-[95vw] max-h-[80vh] w-auto h-auto rounded-lg shadow-lg m-2"
+              style={{ objectFit: "contain" }}
+            />
+          </div>
         </div>
       )}
     </div>

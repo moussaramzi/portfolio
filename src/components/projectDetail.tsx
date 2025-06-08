@@ -84,12 +84,22 @@ export default function ProjectDetail() {
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
           onClick={() => setModalImage(null)}
         >
-          <img
-            src={modalImage}
-            alt={t(project.titleKey, { ns: "projects" })}
-            className="max-w-[95vw] max-h-[80vh] w-auto h-auto rounded-lg shadow-lg m-2"
-            style={{ objectFit: "contain" }}
-          />
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setModalImage(null)}
+              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-xl text-white bg-black bg-opacity-50 rounded-full p-0 hover:bg-opacity-80 transition cursor-pointer"
+              aria-label="Close"
+              style={{ zIndex: 10 }}
+            >
+              ✖
+            </button>
+            <img
+              src={modalImage}
+              alt={t(project.titleKey, { ns: "projects" })}
+              className="max-w-[95vw] max-h-[80vh] w-auto h-auto rounded-lg shadow-lg m-2"
+              style={{ objectFit: "contain" }}
+            />
+          </div>
         </div>
       )}
       {project.technologies && (
@@ -114,35 +124,27 @@ export default function ProjectDetail() {
           </div>
         </div>
       )}
-     {project.id === "pos" && (
+      {project.id === "pos" && (
         <section className="mb-12 mt-6">
           <h2 className="text-3xl ">
             {t("pos.aboutTitle", { ns: "projects" })}
           </h2>
-          <p className="mb-4">
-            {t("pos.about", { ns: "projects" })}
-          </p>
+          <p>{t("pos.about", { ns: "projects" })}</p>
 
           <h3 className="text-2xl font-semibold mt-6 ">
             {t("pos.selfserviceTitle", { ns: "projects" })}
           </h3>
-          <p className="text-gray-800 dark:text-gray-200 mb-4">
-            {t("pos.selfservice", { ns: "projects" })}
-          </p>
+          <p>{t("pos.selfservice", { ns: "projects" })}</p>
 
           <h3 className="text-2xl font-semibold mt-6 ">
             {t("pos.techTitle", { ns: "projects" })}
           </h3>
-          <p className="text-gray-800 dark:text-gray-200 mb-4">
-            {t("pos.tech", { ns: "projects" })}
-          </p>
+          <p>{t("pos.tech", { ns: "projects" })}</p>
 
           <h3 className="text-2xl font-semibold mt-6 ">
             {t("pos.adminTitle", { ns: "projects" })}
           </h3>
-          <p className="text-gray-800 dark:text-gray-200">
-            {t("pos.admin", { ns: "projects" })}
-          </p>
+          <p>{t("pos.admin", { ns: "projects" })}</p>
           <div className="mt-6">
             <a
               href="https://github.com/moussaramzi/pos"

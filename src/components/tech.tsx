@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect, useRef, RefObject } from "react";
 
 function getSkillLevel(skill: number): string {
-  if (skill >= 90) return "Expert";
-  if (skill >= 75) return "Advanced";
-  if (skill > 50) return "Intermediate";
-  if (skill >= 25) return "Basic";
-  return "Beginner";
+  if (skill >= 90) return "expert";
+  if (skill >= 75) return "advanced";
+  if (skill > 50) return "intermediate";
+  if (skill >= 25) return "basic";
+  return "beginner";
 }
 interface TechIconProps {
   src: string;
@@ -27,11 +27,12 @@ export function TechIcon({
   srcDark,
   visible = true, 
 }: TechIconProps) {
+  const { t } = useTranslation("tech"); // Add this line
   const [loaded, setLoaded] = useState(false);
   const [showSkill, setShowSkill] = useState(false);
   const [progress, setProgress] = useState(0);
   const animationRef = useRef<number | null>(null);
-  const skillLevel = level || getSkillLevel(skill);
+  const skillLevelKey = level || getSkillLevel(skill);
 
   const [effectiveSrc, setEffectiveSrc] = useState(src);
   const iconRef = useRef<HTMLDivElement>(null);
@@ -138,7 +139,7 @@ export function TechIcon({
           ></div>
         </div>
         <div className="text-blue-500 dark:text-blue-400 pt-2">
-          {skillLevel}
+          {t(`tech.level.${skillLevelKey}`)}
         </div>
       </div>
     </div>
