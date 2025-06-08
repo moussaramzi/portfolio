@@ -18,7 +18,7 @@ export const projects: Project[] = [
     id: "project4",
     titleKey: "project4.title",
     descriptionKey: "project4.description",
-    image: "/projects/project4/project4.png",
+    image: "/projects/project4/project4.webp",
     link: "/projects/project4",
     technologies: [
       {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     id: "recipe-microservice",
     titleKey: "recipe.title",
     descriptionKey: "recipe.description",
-    image: "/projects/microservice/recipe-microservice.png",
+    image: "/projects/microservice/recipe-microservice.webp",
     link: "/projects/recipe-microservice",
     technologies: [
       {
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     id: "pos",
     titleKey: "pos.title",
     descriptionKey: "pos.description",
-    image: "/projects/pos/pos.png",
+    image: "/projects/pos/pos.webp",
     link: "/projects/pos",
     technologies: [
       {
