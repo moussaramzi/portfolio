@@ -1,11 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function InternshipDetail() {
   const { t } = useTranslation("internship");
   const navigate = useNavigate();
   const [modalImage, setModalImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleBack = () => {
     navigate("/", { replace: false });

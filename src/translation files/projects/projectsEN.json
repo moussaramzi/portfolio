@@ -1,16 +1,18 @@
 {
-  "socialapp": {
-    "title": "SocialApp",
-    "description": "A full-featured social media app built with React Native and Firebase.",
+  "htitle": "My Projects",
+  "view": "View Project",
+  "project4": {
+    "title": "Project 4.0",
+    "description": "A smart system for detecting Asian hornets and automatically estimating nest locations through an interactive dashboard. Discover how we use technology to help protect bees.",
     "details": "This is a detailed description of SocialApp. You can add more info here."
   },
   "taskflow": {
-    "title": "TaskFlow",
+    "title": "Recipe Microservice",
     "description": "Kanban-style productivity app using Angular and Laravel backend.",
     "details": "This is a detailed description of TaskFlow. You can add more info here."
   },
   "eshop": {
-    "title": "E-Shop",
+    "title": "POS system",
     "description": "A sleek eCommerce platform using Next.js, Tailwind CSS, and Stripe.",
     "details": "This is a detailed description of E-Shop. You can add more info here."
   }
