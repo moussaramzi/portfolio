@@ -1,17 +1,53 @@
 {
-  "socialapp": {
-    "title": "SocialApp",
-    "description": "Een uitgebreide social media app gebouwd met React Native en Firebase.",
-    "details": "Dit is een gedetailleerde beschrijving van SocialApp. Je kunt hier meer informatie toevoegen."
+  "back": "Terug naar Projecten",
+  "htitle": "Mijn Projecten",
+  "view": "Bekijk Project",
+  "technologies": "Gebruikte Technologieën",
+  "project4": {
+    "title": "Project 4.0",
+    "description": "Een slimme oplossing om Aziatische hoornaars op te sporen en nesten automatisch te lokaliseren via een interactief dashboard. Ontdek hoe we technologie inzetten om bijen te beschermen.",
+    "aboutTitle": "Over het Project",
+    "about": "BeeSafe is een innovatief project dat werd gerealiseerd door een team van vijf studenten. Het doel is om de verspreiding van de invasieve Aziatische hoornaar tegen te gaan door op een efficiënte manier hun nesten te lokaliseren.",
+    "hardwareTitle": "Hardware & AI-integratie",
+    "hardware1": "We hebben een Raspberry Pi gekoppeld aan een camera en een AI-model dat getraind is om Aziatische hoornaars te herkennen. De AI detecteert niet alleen de hoornaar, maar bepaalt ook de vliegrichting van het insect.",
+    "hardware2": "Door meerdere waarnemingen in tijd en ruimte te combineren, kunnen we met behulp van wiskundige berekeningen een schatting maken van waar het nest zich waarschijnlijk bevindt.",
+    "webappTitle": "Webapplicatie & Functionaliteit",
+    "webapp1": "De webapplicatie toont een kaart met alle potentiële locaties van hoornaarnesten. Deze kaart wordt automatisch geüpdatet telkens wanneer de Raspberry Pi nieuwe informatie doorstuurt.",
+    "webapp2": "Via de interface kunnen gebruikers de posities van de toestellen wijzigen, net als de richting waarin de camera's kijken. Op basis daarvan voert de backend automatisch nieuwe berekeningen uit.",
+    "contributionTitle": "Mijn Bijdrage",
+    "contribution1": "Ik was verantwoordelijk voor het uitwerken van de logica achter de berekeningen die op basis van tijd en vliegrichting een inschatting maken van de locatie van het nest van de Aziatische hoornaar.",
+    "contribution2": "Daarnaast ontwikkelden we samen de webapplicatie waarin deze berekeningen visueel worden weergegeven op een interactieve kaart. We zorgden ervoor dat deze kaart automatisch werd geüpdatet op basis van de gegevens die door de Raspberry Pi's worden doorgestuurd.",
+    "contribution3": "Het project vereiste een nauwe samenwerking tussen software en hardware, en ik ben trots op het resultaat dat we als team hebben neergezet. Voor meer technische details en de volledige broncode, kan je de GitHub-repository van BeeSafe bekijken.",
+    "github": "🐝 Bekijk GitHub Repository"
   },
-  "taskflow": {
-    "title": "TaskFlow",
-    "description": "Productiviteitsapp in Kanban-stijl met Angular en een Laravel-backend.",
-    "details": "Dit is een gedetailleerde beschrijving van TaskFlow. Je kunt hier meer informatie toevoegen."
+  "recipe": {
+    "title": "Recepten Microservice",
+    "description": "Een modern receptenplatform gebouwd met microservices waarin gebruikers eenvoudig recepten kunnen beheren en feedback kunnen geven. Dankzij OAuth2-authenticatie en een centrale API Gateway is de applicatie zowel veilig als schaalbaar.",
+    "aboutTitle": "Over het project",
+    "about": "Dit receptenplatform is een project dat ik volledig zelf heb ontwikkeld, van frontend tot backend. Het maakt gebruik van een microservices-architectuur waarbij recepten, gebruikers en reacties elk door een aparte service beheerd worden.",
+    "microservicesTitle": "Microservices & Databases",
+    "microservices": "De receptenservice is gekoppeld aan een MySQL-database en beheert alle CRUD-operaties voor recepten, inclusief het ophalen van reacties en auteursinformatie. De commentaarservice gebruikt een MongoDB-database om gebruikersreacties op te slaan en efficiënt op te vragen per recept. Tot slot beheert de gebruikersservice de registratie en het ophalen van gebruikersinformatie, eveneens via MongoDB.",
+    "authTitle": "Authenticatie & API Gateway",
+    "auth": "Alle clientaanvragen worden afgehandeld via een centrale API Gateway, die de communicatie naar de juiste service doorstuurt. Deze gateway verwerkt ook de OAuth2-authenticatie via Google One-Tap login en zorgt voor de beveiliging van de endpoints.",
+    "frontendTitle": "Frontend",
+    "frontend": "Voor de frontend heb ik een Angular-applicatie gebouwd. Gebruikers kunnen inloggen met Google dankzij OAuth2-authenticatie, recepten bekijken, toevoegen, bewerken of verwijderen, en reacties achterlaten op recepten. Alle interactie met de backend verloopt via de API Gateway.",
+    "internalTitle": "Interne communicatie & Containerisatie",
+    "internal": "De microservices communiceren onderling met WebClient, wat zorgt voor een vlotte en schaalbare interactie. Daarnaast is het volledige project gedockerized, waardoor het eenvoudig lokaal of in een cloudomgeving op te zetten is met behulp van Docker Compose.",
+    "resultTitle": "Resultaat",
+    "result": "Dankzij de duidelijke afbakening van verantwoordelijkheden per service is het platform schaalbaar, onderhoudsvriendelijk en klaar voor uitbreiding. Het project toont mijn vaardigheden in fullstack ontwikkeling, microservices, en moderne DevOps-technieken.",
+    "github": "🍽️ Bekijk GitHub Repository"
   },
-  "eshop": {
-    "title": "E-Shop",
-    "description": "Een moderne e-commerce platform gebouwd met Next.js, Tailwind CSS en Stripe.",
-    "details": "Dit is een gedetailleerde beschrijving van E-Shop. Je kunt hier meer informatie toevoegen."
+  "pos": {
+    "title": "POS-systeem voor Restaurants",
+    "description": "Een op maat gemaakt kassasysteem voor restaurants, gebouwd met Laravel, PHP en Livewire.",
+    "aboutTitle": "Projectoverzicht",
+    "about": "Toen een vriend van mij zijn eigen restaurant opende, kreeg ik de kans om een praktisch en realistisch project uit te werken: een volledig functioneel POS-systeem op maat. Door rechtstreeks met hem te overleggen, leerde ik welke functies écht belangrijk zijn in de horeca, en hoe het bestelproces er in de praktijk aan toe gaat.",
+    "selfserviceTitle": "Zelfbediening voor Klanten",
+    "selfservice": "Het systeem is geïnspireerd op het zelfbedieningsconcept van ketens zoals McDonald's. Klanten kunnen via een gebruiksvriendelijke interface maaltijden selecteren, aanpassen en bestellen. Denk aan het weglaten van ingrediënten of het toevoegen van extra’s – volledig naar eigen smaak.",
+    "techTitle": "Technologie: Laravel, PHP & Livewire",
+    "tech": "Voor de ontwikkeling gebruikte ik Laravel in combinatie met Livewire, zodat de frontend dynamisch reageert zonder dat er constant pagina’s herladen moeten worden. Dit zorgt voor een vlotte en moderne gebruikerservaring.",
+    "adminTitle": "Beheeromgeving voor Restaurantuitbaters",
+    "admin": "Aan de beheerkant kunnen admins gerechten toevoegen, menu’s samenstellen en prijzen aanpassen. Dit maakt het systeem flexibel en makkelijk inzetbaar voor verschillende menutypes en dagaanbiedingen.",
+    "github": "🍔 Bekijk Github Repository"
   }
 }

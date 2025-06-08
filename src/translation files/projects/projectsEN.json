@@ -1,17 +1,53 @@
 {
-  "socialapp": {
-    "title": "SocialApp",
-    "description": "A full-featured social media app built with React Native and Firebase.",
-    "details": "This is a detailed description of SocialApp. You can add more info here."
+  "back": "Back to Projects",
+  "htitle": "My Projects",
+  "view": "View Project",
+  "technologies": "Technologies Used",
+  "project4": {
+    "title": "Project 4.0",
+    "description": "A smart system for detecting Asian hornets and automatically estimating nest locations through an interactive dashboard. Discover how we use technology to help protect bees.",
+    "aboutTitle": "About the Project",
+    "about": "BeeSafe is an innovative project realized by a team of five students. The goal is to combat the spread of the invasive Asian hornet by efficiently locating their nests.",
+    "hardwareTitle": "Hardware & AI Integration",
+    "hardware1": "We connected a Raspberry Pi to a camera and an AI model trained to recognize Asian hornets. The AI not only detects the hornet but also determines the flight direction of the insect.",
+    "hardware2": "By combining multiple observations in time and space, we can use mathematical calculations to estimate where the nest is likely located.",
+    "webappTitle": "Web Application & Functionality",
+    "webapp1": "The web application displays a map with all potential hornet nest locations. This map is automatically updated whenever the Raspberry Pi sends new information.",
+    "webapp2": "Through the interface, users can change the positions of the devices as well as the direction the cameras are facing. The backend then automatically performs new calculations based on this.",
+    "contributionTitle": "My Contribution",
+    "contribution1": "I was responsible for developing the logic behind the calculations that estimate the nest location of the Asian hornet based on time and flight direction.",
+    "contribution2": "Additionally, we jointly developed the web application in which these calculations are visually displayed on an interactive map. We ensured that this map was automatically updated based on the data sent by the Raspberry Pis.",
+    "contribution3": "The project required close collaboration between software and hardware, and I am proud of the result we achieved as a team. For more technical details and the full source code, you can check out the BeeSafe GitHub repository.",
+    "github": "🐝 View GitHub Repository"
   },
-  "taskflow": {
-    "title": "TaskFlow",
-    "description": "Kanban-style productivity app using Angular and Laravel backend.",
-    "details": "This is a detailed description of TaskFlow. You can add more info here."
+  "recipe": {
+    "title": "Recipe Microservice",
+    "description": "A modern recipe platform built with a microservices architecture, allowing users to easily manage recipes and leave feedback. With OAuth2 authentication and a centralized API Gateway, the application is both secure and scalable.",
+    "aboutTitle": "About the project",
+    "about": "This recipe platform is a project I developed entirely myself, from frontend to backend. It uses a microservices architecture where recipes, users, and comments are each managed by a separate service.",
+    "microservicesTitle": "Microservices & Databases",
+    "microservices": "The recipe service is connected to a MySQL database and manages all CRUD operations for recipes, including retrieving comments and author information. The comment service uses a MongoDB database to store user comments and efficiently retrieve them per recipe. Finally, the user service manages registration and retrieval of user information, also via MongoDB.",
+    "authTitle": "Authentication & API Gateway",
+    "auth": "All client requests are handled via a central API Gateway, which routes communication to the appropriate service. This gateway also handles OAuth2 authentication via Google One-Tap login and secures the endpoints.",
+    "frontendTitle": "Frontend",
+    "frontend": "For the frontend, I built an Angular application. Users can log in with Google thanks to OAuth2 authentication, view, add, edit, or delete recipes, and leave comments on recipes. All interaction with the backend goes through the API Gateway.",
+    "internalTitle": "Internal Communication & Containerization",
+    "internal": "The microservices communicate with each other using WebClient, ensuring smooth and scalable interaction. The entire project is dockerized, making it easy to set up locally or in a cloud environment using Docker Compose.",
+    "resultTitle": "Result",
+    "result": "Thanks to the clear separation of responsibilities per service, the platform is scalable, maintainable, and ready for expansion. The project demonstrates my skills in fullstack development, microservices, and modern DevOps techniques.",
+    "github": "🍽️ View GitHub Repository"
   },
-  "eshop": {
-    "title": "E-Shop",
-    "description": "A sleek eCommerce platform using Next.js, Tailwind CSS, and Stripe.",
-    "details": "This is a detailed description of E-Shop. You can add more info here."
+  "pos": {
+    "title": "Restaurant POS System",
+    "description": "A custom point-of-sale system for restaurants, built with Laravel, PHP, and Livewire.",
+    "aboutTitle": "Project Overview",
+    "about": "When a friend opened his own restaurant, I got the opportunity to develop a practical and realistic project: a fully functional custom POS system. By consulting directly with him, I learned which features are truly important in the hospitality industry and how the ordering process works in practice.",
+    "selfserviceTitle": "Self-Service for Customers",
+    "selfservice": "The system is inspired by the self-service concept of chains like McDonald's. Customers can use an intuitive interface to select, customize, and order meals—think of removing ingredients or adding extras, all to their own taste.",
+    "techTitle": "Technology: Laravel, PHP & Livewire",
+    "tech": "For development, I used Laravel combined with Livewire, allowing the frontend to react dynamically without constant page reloads. This ensures a smooth and modern user experience.",
+    "adminTitle": "Admin Environment for Restaurant Owners",
+    "admin": "On the admin side, admins can add dishes, compose menus, and adjust prices. This makes the system flexible and easy to use for different menu types and daily specials.",
+    "github": "🍔 View Github Repository"
   }
 }

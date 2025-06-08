@@ -252,13 +252,6 @@ export function Tools() {
             visible={backendVisible}
           />
           <TechIcon
-            src="/tech/skill-icons--mysql-dark.svg"
-            alt="MySQL"
-            label="MySQL"
-            skill={80}
-            visible={backendVisible}
-          />
-          <TechIcon
             src="/tech/skill-icons--java-dark.svg"
             alt="Java"
             label="Java"
@@ -277,6 +270,20 @@ export function Tools() {
             alt="Nodejs"
             label="Nodejs"
             skill={85}
+            visible={backendVisible}
+          />
+           <TechIcon
+            src="/tech/skill-icons--mysql-dark.svg"
+            alt="MySQL"
+            label="MySQL"
+            skill={80}
+            visible={backendVisible}
+          />
+           <TechIcon
+            src="/tech/skill-icons--mongodb.svg"
+            alt="MongoDB"
+            label="MongoDB"
+            skill={70}
             visible={backendVisible}
           />
         </div>
