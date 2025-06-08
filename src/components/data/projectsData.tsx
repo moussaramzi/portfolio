@@ -67,12 +67,12 @@ export const projects: Project[] = [
         alt: "GitHub",
         labelKey: "tech.github",
       },
-         {
+      {
         src: "/tech/skill-icons--mysql-dark.svg",
         alt: "Mysql",
         labelKey: "tech.mysql",
       },
-         {
+      {
         src: "/tech/skill-icons--mongodb.svg",
         alt: "MongoDB",
         labelKey: "tech.mongodb",
@@ -80,21 +80,27 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "eshop",
-    titleKey: "eshop.title",
-    descriptionKey: "eshop.description",
+    id: "pos",
+    titleKey: "pos.title",
+    descriptionKey: "pos.description",
     image: "/projects/pos/pos.png",
-    link: "/projects/eshop",
+    link: "/projects/pos",
     technologies: [
       {
-        src: "/tech/skill-icons--react-dark.svg",
-        alt: "React Native",
-        labelKey: "tech.reactNative",
+        src: "/tech/skill-icons--laravel-dark.svg",
+        alt: "Mysql",
+        labelKey: "tech.mysql",
       },
       {
         src: "/tech/skill-icons--mysql-dark.svg",
         alt: "Mysql",
         labelKey: "tech.mysql",
+      },
+      {
+        src: "/tech/skill-icons--github-dark.svg",
+        srcDark: "/tech/skill-icons--github.svg",
+        alt: "GitHub",
+        labelKey: "tech.github",
       },
     ],
   },

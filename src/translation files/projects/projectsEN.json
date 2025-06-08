@@ -1,6 +1,8 @@
 {
+  "back": "Back to Projects",
   "htitle": "My Projects",
   "view": "View Project",
+  "technologies": "Technologies Used",
   "project4": {
     "title": "Project 4.0",
     "description": "A smart system for detecting Asian hornets and automatically estimating nest locations through an interactive dashboard. Discover how we use technology to help protect bees.",
@@ -35,8 +37,17 @@
     "result": "Thanks to the clear separation of responsibilities per service, the platform is scalable, maintainable, and ready for expansion. The project demonstrates my skills in fullstack development, microservices, and modern DevOps techniques.",
     "github": "🍽️ View GitHub Repository"
   },
-  "eshop": {
-    "title": "POS system",
-    "description": "A sleek eCommerce platform using Next.js, Tailwind CSS, and Stripe."
+  "pos": {
+    "title": "Restaurant POS System",
+    "description": "A custom point-of-sale system for restaurants, built with Laravel, PHP, and Livewire.",
+    "aboutTitle": "Project Overview",
+    "about": "When a friend opened his own restaurant, I got the opportunity to develop a practical and realistic project: a fully functional custom POS system. By consulting directly with him, I learned which features are truly important in the hospitality industry and how the ordering process works in practice.",
+    "selfserviceTitle": "Self-Service for Customers",
+    "selfservice": "The system is inspired by the self-service concept of chains like McDonald's. Customers can use an intuitive interface to select, customize, and order meals—think of removing ingredients or adding extras, all to their own taste.",
+    "techTitle": "Technology: Laravel, PHP & Livewire",
+    "tech": "For development, I used Laravel combined with Livewire, allowing the frontend to react dynamically without constant page reloads. This ensures a smooth and modern user experience.",
+    "adminTitle": "Admin Environment for Restaurant Owners",
+    "admin": "On the admin side, admins can add dishes, compose menus, and adjust prices. This makes the system flexible and easy to use for different menu types and daily specials.",
+    "github": "🍔 View Github Repository"
   }
 }

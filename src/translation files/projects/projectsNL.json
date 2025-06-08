@@ -1,7 +1,9 @@
 {
+  "back": "Terug naar Projecten",
   "htitle": "Mijn Projecten",
   "view": "Bekijk Project",
- "project4": {
+  "technologies": "Gebruikte Technologieën",
+  "project4": {
     "title": "Project 4.0",
     "description": "Een slimme oplossing om Aziatische hoornaars op te sporen en nesten automatisch te lokaliseren via een interactief dashboard. Ontdek hoe we technologie inzetten om bijen te beschermen.",
     "aboutTitle": "Over het Project",
@@ -35,8 +37,17 @@
     "result": "Dankzij de duidelijke afbakening van verantwoordelijkheden per service is het platform schaalbaar, onderhoudsvriendelijk en klaar voor uitbreiding. Het project toont mijn vaardigheden in fullstack ontwikkeling, microservices, en moderne DevOps-technieken.",
     "github": "🍽️ Bekijk GitHub Repository"
   },
-  "eshop": {
-    "title": "POS systeem",
-    "description": "Een moderne e-commerce platform gebouwd met Next.js, Tailwind CSS en Stripe."
+  "pos": {
+    "title": "POS-systeem voor Restaurants",
+    "description": "Een op maat gemaakt kassasysteem voor restaurants, gebouwd met Laravel, PHP en Livewire.",
+    "aboutTitle": "Projectoverzicht",
+    "about": "Toen een vriend van mij zijn eigen restaurant opende, kreeg ik de kans om een praktisch en realistisch project uit te werken: een volledig functioneel POS-systeem op maat. Door rechtstreeks met hem te overleggen, leerde ik welke functies écht belangrijk zijn in de horeca, en hoe het bestelproces er in de praktijk aan toe gaat.",
+    "selfserviceTitle": "Zelfbediening voor Klanten",
+    "selfservice": "Het systeem is geïnspireerd op het zelfbedieningsconcept van ketens zoals McDonald's. Klanten kunnen via een gebruiksvriendelijke interface maaltijden selecteren, aanpassen en bestellen. Denk aan het weglaten van ingrediënten of het toevoegen van extra’s – volledig naar eigen smaak.",
+    "techTitle": "Technologie: Laravel, PHP & Livewire",
+    "tech": "Voor de ontwikkeling gebruikte ik Laravel in combinatie met Livewire, zodat de frontend dynamisch reageert zonder dat er constant pagina’s herladen moeten worden. Dit zorgt voor een vlotte en moderne gebruikerservaring.",
+    "adminTitle": "Beheeromgeving voor Restaurantuitbaters",
+    "admin": "Aan de beheerkant kunnen admins gerechten toevoegen, menu’s samenstellen en prijzen aanpassen. Dit maakt het systeem flexibel en makkelijk inzetbaar voor verschillende menutypes en dagaanbiedingen.",
+    "github": "🍔 Bekijk Github Repository"
   }
 }

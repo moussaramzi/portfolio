@@ -59,7 +59,7 @@ export default function ProjectDetail() {
         onClick={handleBack}
         className="text-blue-500 underline mb-4 inline-block cursor-pointer"
       >
-        &larr; Back to Projects
+        &larr; {t("back")}
       </button>
       <h1 className="text-4xl font-bold mb-4">
         {t(project.titleKey, { ns: "projects" })}
@@ -94,7 +94,7 @@ export default function ProjectDetail() {
       )}
       {project.technologies && (
         <div>
-          <h2 className="text-3xl mb-4">Technologies Used</h2>
+          <h2 className="text-3xl mb-4">{t("technologies")}</h2>
           <div className="flex flex-wrap gap-6">
             {project.technologies.map((tech) => {
               let src = tech.src;
@@ -113,6 +113,47 @@ export default function ProjectDetail() {
             })}
           </div>
         </div>
+      )}
+     {project.id === "pos" && (
+        <section className="mb-12 mt-6">
+          <h2 className="text-3xl ">
+            {t("pos.aboutTitle", { ns: "projects" })}
+          </h2>
+          <p className="mb-4">
+            {t("pos.about", { ns: "projects" })}
+          </p>
+
+          <h3 className="text-2xl font-semibold mt-6 ">
+            {t("pos.selfserviceTitle", { ns: "projects" })}
+          </h3>
+          <p className="text-gray-800 dark:text-gray-200 mb-4">
+            {t("pos.selfservice", { ns: "projects" })}
+          </p>
+
+          <h3 className="text-2xl font-semibold mt-6 ">
+            {t("pos.techTitle", { ns: "projects" })}
+          </h3>
+          <p className="text-gray-800 dark:text-gray-200 mb-4">
+            {t("pos.tech", { ns: "projects" })}
+          </p>
+
+          <h3 className="text-2xl font-semibold mt-6 ">
+            {t("pos.adminTitle", { ns: "projects" })}
+          </h3>
+          <p className="text-gray-800 dark:text-gray-200">
+            {t("pos.admin", { ns: "projects" })}
+          </p>
+          <div className="mt-6">
+            <a
+              href="https://github.com/moussaramzi/pos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 shadow-sm hover:shadow-md hover:bg-blue-100 dark:hover:bg-blue-900 transition"
+            >
+              {t("pos.github", { ns: "projects" })}
+            </a>
+          </div>
+        </section>
       )}
       {project.id === "recipe-microservice" && (
         <section className="mb-12 mt-6">
