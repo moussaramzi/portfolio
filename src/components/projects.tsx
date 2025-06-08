@@ -28,26 +28,30 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <a
         href={project.link}
-        className="block text-white rounded-2xl shadow-xl w-full max-w-5xl mx-auto relative overflow-hidden group cursor-pointer min-h-[500px] h-[500px]"
+        className="block text-white rounded-2xl shadow-xl w-full max-w-5xl mx-auto relative overflow-hidden group cursor-pointer"
       >
         <div className="p-6 bg-[#242424] rounded-t-2xl">
           <h3 className="text-2xl font-semibold">{t(project.titleKey)}</h3>
         </div>
-        <div className="relative w-full h-full">
+        <div className="relative w-full">
           <img
             src={project.image}
             alt={t(project.titleKey)}
-            className="absolute inset-0 w-full h-full object-cover z-0"
+            className="w-full object-cover z-0 max-h-72 md:max-h-none"
           />
 
           {/* Description for mobile (bottom) */}
-          <div className="md:hidden p-6 bg-gray-800/90 absolute bottom-0 left-0 w-full z-10">
-            <p className="text-gray-200 text-sm mb-2">
+          <div className="md:hidden w-full bg-gray-800
+           p-6">
+            <p className="text-gray-200 text-sm mb-2 break-words">
               {t(project.descriptionKey)}
             </p>
-            <span className="inline-block bg-blue-600 text-white py-2 px-4 rounded-xl">
-              View Project
-            </span>
+            <a
+              href={project.link}
+              className="inline-block bg-blue-600 text-white py-2 px-4 rounded-xl mt-2 w-full text-center"
+            >
+              {t("view")}
+            </a>
           </div>
 
           {/* Description for desktop */}
