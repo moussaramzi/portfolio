@@ -15,7 +15,6 @@ export const projects: Project[] = [
     descriptionKey: "project4.description",
     image: "/projects/project4/project4.png",
     link: "/projects/project4",
-    detailsKey: "project4.details",
     technologies: [
       {
         src: "/tech/skill-icons--dotnet.svg",
@@ -46,7 +45,6 @@ export const projects: Project[] = [
     descriptionKey: "taskflow.description",
     image: "/projects/microservice/recipe-microservice.png",
     link: "/projects/taskflow",
-    detailsKey: "taskflow.details",
     technologies: [
       {
         src: "/tech/skill-icons--react-dark.svg",
@@ -66,7 +64,6 @@ export const projects: Project[] = [
     descriptionKey: "eshop.description",
     image: "/projects/pos/pos.png",
     link: "/projects/eshop",
-    detailsKey: "eshop.details",
     technologies: [
       {
         src: "/tech/skill-icons--react-dark.svg",

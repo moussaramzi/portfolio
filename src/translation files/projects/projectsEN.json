@@ -4,16 +4,26 @@
   "project4": {
     "title": "Project 4.0",
     "description": "A smart system for detecting Asian hornets and automatically estimating nest locations through an interactive dashboard. Discover how we use technology to help protect bees.",
-    "details": "This is a detailed description of SocialApp. You can add more info here."
+    "aboutTitle": "About the Project",
+    "about": "BeeSafe is an innovative project realized by a team of five students. The goal is to combat the spread of the invasive Asian hornet by efficiently locating their nests.",
+    "hardwareTitle": "Hardware & AI Integration",
+    "hardware1": "We connected a Raspberry Pi to a camera and an AI model trained to recognize Asian hornets. The AI not only detects the hornet but also determines the flight direction of the insect.",
+    "hardware2": "By combining multiple observations in time and space, we can use mathematical calculations to estimate where the nest is likely located.",
+    "webappTitle": "Web Application & Functionality",
+    "webapp1": "The web application displays a map with all potential hornet nest locations. This map is automatically updated whenever the Raspberry Pi sends new information.",
+    "webapp2": "Through the interface, users can change the positions of the devices as well as the direction the cameras are facing. The backend then automatically performs new calculations based on this.",
+    "contributionTitle": "My Contribution",
+    "contribution1": "I was responsible for developing the logic behind the calculations that estimate the nest location of the Asian hornet based on time and flight direction.",
+    "contribution2": "Additionally, we jointly developed the web application in which these calculations are visually displayed on an interactive map. We ensured that this map was automatically updated based on the data sent by the Raspberry Pis.",
+    "contribution3": "The project required close collaboration between software and hardware, and I am proud of the result we achieved as a team. For more technical details and the full source code, you can check out the BeeSafe GitHub repository.",
+    "github": "🐝 View GitHub Repository"
   },
   "taskflow": {
     "title": "Recipe Microservice",
-    "description": "Kanban-style productivity app using Angular and Laravel backend.",
-    "details": "This is a detailed description of TaskFlow. You can add more info here."
+    "description": "Kanban-style productivity app using Angular and Laravel backend."
   },
   "eshop": {
     "title": "POS system",
-    "description": "A sleek eCommerce platform using Next.js, Tailwind CSS, and Stripe.",
-    "details": "This is a detailed description of E-Shop. You can add more info here."
+    "description": "A sleek eCommerce platform using Next.js, Tailwind CSS, and Stripe."
   }
 }
