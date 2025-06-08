@@ -12,13 +12,18 @@ This project showcases my skills, projects, and technologies I use — built wit
 
 ---
 
-## 🌟 Features
+## ✨ Features
 
-- 📄 **About Me** section with dynamic profile picture placeholder
-- 🛠 **Tech Stack** section with animated skill progress bars
-- 💬 **Contact Section** to get in touch easily
-- ⚡ Fast, responsive, and mobile-friendly
-- 🌙 Dark Mode friendly design (future plan)
+- **📱 Fully Responsive**: Optimized for all device sizes and screen resolutions
+- **⚡ Lightning Fast**: Built with Vite for optimal performance and fast loading
+- **🎨 Modern Design**: Clean, professional UI with TailwindCSS styling
+- **📧 Contact Integration**: Functional contact form powered by EmailJS
+- **🛠 Skills Showcase**: Interactive tech stack section with animated progress bars
+- **📄 About Section**: Dynamic profile presentation with professional overview
+- **🌙 Dark/Light Mode**: Complete theme toggle functionality with smooth transitions
+- **🌐 Multi-Language Support**: Available in Dutch and English with seamless language switching
+- **♿ Accessible**: Built with web accessibility best practices
+- **🔧 Type Safe**: Full TypeScript implementation for better code quality
 
 ---
 
