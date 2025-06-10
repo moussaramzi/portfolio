@@ -8,6 +8,7 @@
     "level": {
       "expert": "Expert",
       "advanced": "Gevorderd",
+      "proficient": "Bekwaam",
       "intermediate": "Gemiddeld",
       "basic": "Basis",
       "beginner": "Beginner"

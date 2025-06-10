@@ -8,6 +8,7 @@
     "level": {
       "expert": "Expert",
       "advanced": "Advanced",
+      "proficient": "Proficient",
       "intermediate": "Intermediate",
       "basic": "Basic",
       "beginner": "Beginner"
