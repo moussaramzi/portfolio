@@ -106,8 +106,8 @@ const SettingsPopup = () => {
         style={{
           boxShadow: "0 10px 40px rgba(0, 0, 0, 0.15)",
           borderRadius: "0.75rem",
-          backgroundColor: darkMode ? "white" : "#242424",
-          color: darkMode ? "#242424" : "white",
+          backgroundColor: darkMode ? "#32343a" : "#d1d5db",
+          color: darkMode ? "#F0F8FF" : "#242424",
           clipPath,
           transformOrigin,
           padding: "1rem",
@@ -117,11 +117,11 @@ const SettingsPopup = () => {
         {/* Content */}
         <div className="flex flex-col space-y-4 pb-14">
           <div className="flex items-center justify-between  ">
-            <span className="text-sm ">{t('setting.language')}</span>
+            <span className="text-sm ">{t("setting.language")}</span>
             <LanguageSwitcher />
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm  ">{t('setting.theme')}</span>
+            <span className="text-sm  ">{t("setting.theme")}</span>
             <button
               onClick={toggleDarkMode}
               className="w-10 h-10 flex items-center justify-center dark:bg-gray-200 bg-gray-700 rounded-full transition-all"

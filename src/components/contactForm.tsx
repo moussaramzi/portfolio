@@ -35,7 +35,7 @@ export default function ContactForm() {
       const result = await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID!,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID!,
-  
+
         {
           name: form.name,
           email: form.email,
@@ -81,45 +81,49 @@ export default function ContactForm() {
       id="contact"
       className="py-16 my-20 transition-colors duration-500"
     >
-      <div className="container mx-auto px-4 max-w-2xl border-2 border-gray-200 dark:border-gray-700 rounded-xl dark:shadow shadow-2xl p-8">
+      <div className="container mx-auto px-4 max-w-5xl border-2 border-gray-200 dark:border-gray-700 rounded-xl dark:shadow shadow-2xl p-8">
         <h2 className="text-4xl font-bold mb-6 text-center ">
           {t("contact.title")}
         </h2>
         <p className="text-center mb-10">{t("contact.subtitle")}</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block mb-2 text-sm font-medium">
-              {t("contact.name")}
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              autoComplete="name"
-              value={form.name}
-              onChange={handleChange}
-              disabled={isLoading}
-              className="w-full px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none disabled:opacity-50"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block mb-2 text-sm font-medium ">
-              {t("contact.email")}
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              autoComplete="email"
-              value={form.email}
-              onChange={handleChange}
-              disabled={isLoading}
-              className="w-full px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none disabled:opacity-50"
-            />
+          <div className="md:flex md:space-x-6">
+            <div className="md:flex-1 mb-6 md:mb-0">
+              <label htmlFor="name" className="block mb-2 text-sm font-medium">
+                {t("contact.name")}
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                autoComplete="name"
+                value={form.name}
+                onChange={handleChange}
+                disabled={isLoading}
+                className="w-full px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none disabled:opacity-50"
+              />
+            </div>
+            <div className="md:flex-1">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium "
+              >
+                {t("contact.email")}
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                autoComplete="email"
+                value={form.email}
+                onChange={handleChange}
+                disabled={isLoading}
+                className="w-full px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none disabled:opacity-50"
+              />
+            </div>
           </div>
 
           <div>
