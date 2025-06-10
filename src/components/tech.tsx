@@ -15,7 +15,7 @@ interface TechIconProps {
   skill: number;
   level?: string;
   srcDark?: string;
-  visible?: boolean; 
+  visible?: boolean;
 }
 
 export function TechIcon({
@@ -25,7 +25,7 @@ export function TechIcon({
   skill,
   level,
   srcDark,
-  visible = true, 
+  visible = true,
 }: TechIconProps) {
   const { t } = useTranslation("tech"); // Add this line
   const [loaded, setLoaded] = useState(false);
@@ -104,10 +104,7 @@ export function TechIcon({
   }, [src, srcDark]);
 
   return (
-    <div
-      ref={iconRef}
-      className="flex flex-col items-center cursor-pointer"
-    >
+    <div ref={iconRef} className="flex flex-col items-center cursor-pointer">
       <div className="w-16 h-16 mb-2 relative">
         {!loaded && (
           <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-full animate-pulse"></div>
@@ -146,7 +143,9 @@ export function TechIcon({
   );
 }
 
-function useSectionVisible<T extends HTMLElement>(threshold = 0.5): [RefObject<T | null>, boolean] {
+function useSectionVisible<T extends HTMLElement>(
+  threshold = 0.5
+): [RefObject<T | null>, boolean] {
   const ref = useRef<T | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -179,9 +178,11 @@ export function Tools() {
   return (
     <section id="tools" className="py-16 items-center">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-4 text-blue-600">{t("tech.title")}</h2>
-        <p className="text-lg mb-10 lg:mx-52">
-         {t("tech.description")}
+        <h2 className="text-4xl font-bold mb-4 text-blue-600">
+          {t("tech.title")}
+        </h2>
+        <p className="text-lg mb-10 max-w-2xl mx-auto">
+          {t("tech.description")}
         </p>
 
         <p className="text-lg  mb-8">{t("tech.frontend")}</p>
@@ -273,14 +274,14 @@ export function Tools() {
             skill={85}
             visible={backendVisible}
           />
-           <TechIcon
+          <TechIcon
             src="/tech/skill-icons--mysql-dark.svg"
             alt="MySQL"
             label="MySQL"
             skill={80}
             visible={backendVisible}
           />
-           <TechIcon
+          <TechIcon
             src="/tech/skill-icons--mongodb.svg"
             alt="MongoDB"
             label="MongoDB"
@@ -290,10 +291,7 @@ export function Tools() {
         </div>
 
         <p className="text-lg  mb-8">{t("tech.other")}</p>
-        <div
-          ref={otherRef}
-          className="grid grid-cols-2 md:grid-cols-4 gap-10"
-        >
+        <div ref={otherRef} className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <TechIcon
             src="/tech/skill-icons--github-dark.svg"
             srcDark="/tech/skill-icons--github.svg"

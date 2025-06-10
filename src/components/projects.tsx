@@ -23,14 +23,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className="sticky top-32 w-full"
       style={{
         zIndex: index + 1,
-        marginTop: index === 0 ? "0" : "80px",
+        marginTop: index === 0 ? "0" : "100px",
       }}
     >
       <a
         href={project.link}
         className="block text-white rounded-2xl shadow-xl w-full max-w-5xl mx-auto relative overflow-hidden group cursor-pointer"
       >
-        <div className="p-6 bg-[#242424] rounded-t-2xl">
+        <div className="p-6 bg-[#242424] rounded-t-2xl mt-6">
           <h3 className="text-2xl font-semibold">{t(project.titleKey)}</h3>
         </div>
         <div className="relative w-full">
