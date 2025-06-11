@@ -39,7 +39,7 @@ export default function Internship() {
                 { label: "Project Plan", file: "projectPlan.pdf" },
                 {
                   label: `${t("internship.realization")}`,
-                  file: "assessment.pdf",
+                  file: "realisatiedocument.pdf",
                 },
                 {
                   label: `${t("internship.reflection")}`,
