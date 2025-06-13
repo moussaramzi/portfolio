@@ -3,7 +3,8 @@ import { useState, useEffect, useRef, RefObject } from "react";
 
 function getSkillLevel(skill: number): string {
   if (skill >= 90) return "expert";
-  if (skill >= 75) return "advanced";
+  if (skill >= 80) return "advanced";
+  if (skill >= 70) return "proficient";
   if (skill > 50) return "intermediate";
   if (skill >= 25) return "basic";
   return "beginner";
@@ -27,7 +28,7 @@ export function TechIcon({
   srcDark,
   visible = true,
 }: TechIconProps) {
-  const { t } = useTranslation("tech"); // Add this line
+  const { t } = useTranslation("tech"); 
   const [loaded, setLoaded] = useState(false);
   const [showSkill, setShowSkill] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -194,7 +195,7 @@ export function Tools() {
             src="/tech/skill-icons--react-dark.svg"
             alt="React"
             label="React js/native"
-            skill={60}
+            skill={70}
             visible={frontendVisible}
           />
           <TechIcon
@@ -215,14 +216,14 @@ export function Tools() {
             src="/tech/skill-icons--sass.svg"
             alt="Scss"
             label="Scss"
-            skill={60}
+            skill={50}
             visible={frontendVisible}
           />
           <TechIcon
             src="/tech/skill-icons--javascript.svg"
             alt="Javascript"
             label="Javascript"
-            skill={78}
+            skill={70}
             visible={frontendVisible}
           />
           <TechIcon
@@ -236,7 +237,7 @@ export function Tools() {
             src="/tech/skill-icons--typescript.svg"
             alt="Typescript"
             label="Typescript"
-            skill={80}
+            skill={75}
             visible={frontendVisible}
           />
         </div>
@@ -264,21 +265,21 @@ export function Tools() {
             src="/tech/skill-icons--dotnet.svg"
             alt="DotNet"
             label="DotNet"
-            skill={80}
+            skill={77}
             visible={backendVisible}
           />
           <TechIcon
             src="/tech/skill-icons--nodejs-dark.svg"
             alt="Nodejs"
             label="Nodejs"
-            skill={85}
+            skill={75}
             visible={backendVisible}
           />
           <TechIcon
             src="/tech/skill-icons--mysql-dark.svg"
             alt="MySQL"
             label="MySQL"
-            skill={80}
+            skill={75}
             visible={backendVisible}
           />
           <TechIcon
@@ -297,14 +298,14 @@ export function Tools() {
             srcDark="/tech/skill-icons--github.svg"
             alt="Git"
             label="Git"
-            skill={75}
+            skill={80}
             visible={otherVisible}
           />
           <TechIcon
             src="/tech/skill-icons--docker.svg"
             alt="Docker"
             label="Docker"
-            skill={65}
+            skill={75}
             visible={otherVisible}
           />
         </div>
