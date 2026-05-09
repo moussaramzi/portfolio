@@ -23,6 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
+# Claude Code
+CLAUDE.md
+project-layout-preview.html
+
 # Environment variables
 .env.local
 .env.development.local

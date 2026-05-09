@@ -69,7 +69,7 @@ export const projects: Project[] = [
       },
       {
         src: "/tech/skill-icons--mysql-dark.svg",
-        alt: "Mysql",
+        alt: "MySQL",
         labelKey: "tech.mysql",
       },
       {
@@ -88,12 +88,12 @@ export const projects: Project[] = [
     technologies: [
       {
         src: "/tech/skill-icons--laravel-dark.svg",
-        alt: "Mysql",
-        labelKey: "tech.mysql",
+        alt: "Laravel",
+        labelKey: "tech.laravel",
       },
       {
         src: "/tech/skill-icons--mysql-dark.svg",
-        alt: "Mysql",
+        alt: "MySQL",
         labelKey: "tech.mysql",
       },
       {

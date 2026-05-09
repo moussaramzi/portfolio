@@ -1,89 +1,109 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "./data/projectsData";
 import { useTranslation } from "react-i18next";
-
-interface Project {
-  id: string;
-  titleKey: string;
-  descriptionKey: string;
-  image: string;
-  link: string;
-}
-
-function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const { t } = useTranslation(["projects"]);
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.15 }}
-      viewport={{ once: true }}
-      className="sticky top-32 w-full"
-      style={{
-        zIndex: index + 1,
-        marginTop: index === 0 ? "0" : "100px",
-      }}
-    >
-      <a
-        href={project.link}
-        className="block text-white rounded-2xl shadow-xl w-full max-w-5xl mx-auto relative overflow-hidden group cursor-pointer"
-      >
-        <div className="p-6 bg-[#242424] rounded-t-2xl mt-6">
-          <h3 className="text-2xl font-semibold">{t(project.titleKey)}</h3>
-        </div>
-        <div className="relative w-full">
-          <img
-            src={project.image}
-            alt={t(project.titleKey)}
-            className="w-full object-cover z-0 max-h-72 md:max-h-none"
-          />
-
-          {/* Description for mobile (bottom) */}
-          <div className="md:hidden w-full bg-gray-800
-           p-6">
-            <p className="text-gray-200 text-sm mb-2 break-words">
-              {t(project.descriptionKey)}
-            </p>
-            <a
-              href={project.link}
-              className="inline-block bg-blue-600 text-white py-2 px-4 rounded-xl mt-2 w-full text-center"
-            >
-              {t("view")}
-            </a>
-          </div>
-
-          {/* Description for desktop */}
-          <div className="hidden md:block absolute top-0 right-0 h-full w-0 group-hover:w-1/3 bg-gray-500/80 bg-opacity-70 transition-all duration-300 ease-in-out flex items-center justify-center z-20">
-            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full h-full flex flex-col items-center justify-center p-0 group-hover:p-6">
-              <p className="text-gray-200 text-sm mb-4">
-                {t(project.descriptionKey)}
-              </p>
-              <span className="inline-block bg-blue-600 text-white py-2 px-4 rounded-xl hover:bg-blue-500 transition-colors ">
-                {t("view")}
-              </span>
-            </div>
-          </div>
-        </div>
-      </a>
-    </motion.div>
-  );
-}
+import { useNavigate } from "react-router-dom";
 
 export function Projects() {
   const { t } = useTranslation(["projects"]);
+  const navigate = useNavigate();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = projects[activeIndex];
 
   return (
-    <section id="projects" className="relative pt-22 scroll-mt-20">
-      <h2 className="text-4xl font-bold text-center mb-20 top-16 sticky  py-2 ">
-        {t("htitle")}
-      </h2>
+    <section id="projects" className="py-20 scroll-mt-20 px-4">
+      <h2 className="text-4xl font-bold text-center mb-12">{t("htitle")}</h2>
 
-      <div className="relative flex flex-col items-center">
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))}
+      <div className="flex flex-col md:flex-row border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden shadow-xl max-w-7xl mx-auto">
+
+        {/* ── Left: project list ── */}
+        <div className="md:w-1/3 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-[#181818]">
+          {projects.map((project, i) => (
+            <button
+              key={project.id}
+              onClick={() => setActiveIndex(i)}
+              className={`w-full text-left flex items-start gap-4 px-6 py-6 border-l-4 border-b border-gray-200 dark:border-gray-700 last:border-b-0 transition-all duration-200
+                ${i === activeIndex
+                  ? "border-l-blue-500 bg-blue-50 dark:bg-blue-950/40"
+                  : "border-l-transparent hover:bg-gray-100 dark:hover:bg-gray-800/50"
+                }`}
+            >
+              <span
+                className={`text-xs font-bold tabular-nums mt-0.5 shrink-0 ${
+                  i === activeIndex ? "text-blue-500" : "text-gray-400"
+                }`}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="flex flex-col gap-1 min-w-0">
+                <span
+                  className={`text-base font-semibold truncate ${
+                    i === activeIndex
+                      ? "text-blue-500"
+                      : "text-gray-800 dark:text-gray-200"
+                  }`}
+                >
+                  {t(project.titleKey)}
+                </span>
+                <span className="text-xs text-gray-400 truncate">
+                  {project.technologies?.slice(0, 3).map((tech) => tech.alt).join(" · ")}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {/* ── Right: preview ── */}
+        <div className="md:w-2/3 bg-white dark:bg-[#1c1c1c] flex flex-col">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col h-full"
+            >
+              <img
+                src={active.image}
+                alt={t(active.titleKey)}
+                className="w-full object-cover max-h-72 md:max-h-[26rem]"
+              />
+
+              <div className="p-8 flex flex-col gap-5 flex-1">
+                <h3 className="text-2xl font-bold">{t(active.titleKey)}</h3>
+
+                {active.technologies && (
+                  <div className="flex flex-wrap gap-2">
+                    {active.technologies.map((tech) => (
+                      <span
+                        key={tech.alt}
+                        className="flex items-center gap-1.5 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 rounded-full px-3 py-1 text-xs font-medium"
+                      >
+                        <img src={tech.src} alt={tech.alt} className="w-4 h-4" />
+                        {tech.alt}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {t(active.descriptionKey)}
+                </p>
+
+                <button
+                  onClick={() => navigate(active.link)}
+                  className="mt-auto self-start bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl transition-colors cursor-pointer"
+                >
+                  {t("view")} →
+                </button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
       </div>
     </section>
   );
